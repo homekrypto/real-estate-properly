@@ -1,0 +1,59 @@
+Definitive Site Architecture: www.real-estate-properly.com
+This document outlines the complete URL structure and the corresponding page templates we will build.
+1. Core Platform Pages
+These are the main pillars of the site, accessible to all visitors.
+Homepage: https://www.real-estate-properly.com/
+Contact Us: https://www.real-estate-properly.com/contact
+About Us: https://www.real-estate-properly.com/about-us
+Pricing Page (for Agents/Developers): https://www.real-estate-properly.com/pricing
+2. User-Centric Features (Requires Login)
+These pages form the User Dashboard and are personalized for each logged-in user.
+User Dashboard: https://www.real-estate-properly.com/dashboard
+My Favorites: https://www.real-estate-properly.com/dashboard/favorites
+My Saved Searches: https://www.real-estate-properly.com/dashboard/saved-searches
+My Messages: https://www.real-estate-properly.com/dashboard/messages
+Profile Settings: https://www.real-estate-properly.com/dashboard/settings
+3. Search & Browse Structure (The Core Engine)
+This hierarchical structure is optimized for SEO and user experience. It allows for deep, specific searches that are easily shareable.
+Top-Level Country Search: The broadest search category.
+Pattern: /{country}/{buy|rent}
+Example: https://www.real-estate-properly.com/italy/buy
+Example: https://www.real-estate-properly.com/spain/rent
+Regional/City-Level Search: The most common user search.
+Pattern: /{country}/{region-or-city}/{buy|rent}
+Example: https://www.real-estate-properly.com/italy/tuscany/buy
+Example: https://www.real-estate-properly.com/dominican-republic/punta-cana/buy
+Filtered Search by Property Type: Allows users to narrow their search from the URL.
+Pattern: /{country}/{region-or-city}/{buy|rent}/{property-type}
+Example: https://www.real-estate-properly.com/spain/catalonia/buy/villa
+Example: https://www.real-estate-properly.com/italy/tuscany/buy/farmhouse
+Individual Property Listing: The final detail page for a single property.
+Pattern: /listing/{property-id}/{country}-{city}-{short-description} (This format is highly SEO-friendly)
+Example: https://www.real-estate-properly.com/listing/93628339/italy-rome-apartment-with-terrace
+4. Content & Tools
+This section drives organic traffic and establishes authority.
+Main Blog/Guides Hub: The central page for all content marketing.
+https://www.real-estate-properly.com/blog
+Individual Blog Post/Guide:
+Pattern: /blog/{category}/{article-title-slug}
+Example: https://www.real-estate-properly.com/blog/buying-guides/top-10-tips-for-first-time-buyers-in-spain
+Market Trends Tool:
+Pattern: /market-trends/{country}
+Example: https://www.real-estate-properly.com/market-trends/portugal
+5. Agent-Related Structure
+These pages are for the B2B side of the platform.
+Agent Directory Search:
+Pattern: /agents/{country}/{city}
+Example: https://www.real-estate-properly.com/agents/spain/marbella
+Public Agent Profile:
+Pattern: /agent/{agent-name-slug}
+Example: https://www.real-estate-properly.com/agent/jane-doe-real-estate
+Agent Dashboard (Requires Agent Login):
+https://www.real-estate-properly.com/agent-dashboard
+https://www.real-estate-properly.com/agent-dashboard/listings
+https://www.real-estate-properly.com/agent-dashboard/subscription
+6. Static Legal Pages
+Essential footer links for legal compliance and user trust.
+Terms of Service: https://www.real-estate-properly.com/terms
+Privacy Policy: https://www.real-estate-properly.com/privacy
+Cookie Policy: https://www.real-estate-properly.com/cookie-policy

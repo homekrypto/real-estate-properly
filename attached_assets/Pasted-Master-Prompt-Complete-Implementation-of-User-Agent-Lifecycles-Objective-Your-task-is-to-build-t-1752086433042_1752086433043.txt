@@ -1,0 +1,59 @@
+Master Prompt: Complete Implementation of User & Agent Lifecycles
+Objective:
+Your task is to build the complete, end-to-end user experience for the two primary roles on www.real-estate-properly.com: Property Seekers (Users) and Real Estate Agents (Paying Customers). This involves creating all necessary pages, forms, logic, payment integration, and dashboards to support the full lifecycle for each role.
+Phase I: The Standard User (Seeker) Lifecycle
+This phase focuses on the journey of a user looking for property.
+Registration:
+Create a dedicated "Sign Up" page or modal.
+The form must require: Full Name, Email Address, and Password (with confirmation).
+Upon submission, a user account is created in the database with the role set to seeker.
+Crucially: The system must trigger a (simulated) email verification email to the user's address containing a unique verification link. The account remains in an "unverified" state.
+Email Verification:
+When the user clicks the link from their email, they are taken to a page that says "Your account has been successfully verified! You can now log in."
+The user's status in the database is updated to "verified."
+Login:
+Create a "Login" page or modal.
+The form requires Email Address and Password.
+A "Forgot Password" link must be present, which initiates a password reset flow.
+Upon successful login, the user is redirected to the homepage, and the header now shows "Dashboard" and "Logout" buttons.
+Phase II: The Professional Agent Lifecycle (The Business Core)
+This is the complete monetization flow for agents.
+Agent Registration:
+The "Sign Up" process must have a clear option or a separate page for "I am a Real Estate Agent."
+The Agent registration form requires additional fields: Agency Name and Phone Number.
+Upon submission, an account is created with the role set to agent and an "unverified" status, triggering the same email verification flow as in Phase I.
+The Pricing & Onboarding Flow:
+After an agent verifies their email and logs in for the first time, they must be redirected to the Pricing Page. They cannot access the dashboard until they subscribe.
+The Pricing Page must display the following three packages as interactive cards:
+Bronze: 10 Properties, $40/mo.
+Silver: 25 Properties, $60/mo.
+Gold: 35 Properties, $80/mo.
+Each card must clearly display a toggle or text showing the annual savings: "Save 10% by paying for the whole year."
+Each card will have a "Choose Plan" button.
+Stripe Checkout Integration:
+When an agent clicks "Choose Plan," they must be redirected to a Stripe Checkout session.
+The Stripe session must be pre-filled with the correct plan details (e.g., "Gold Plan - Annual Subscription").
+After a successful payment, Stripe must notify our application (via webhook/callback), and the user must be automatically redirected back to their new Agent Dashboard.
+Phase III: The Agent Dashboard & Property Management
+This is the agent's primary workspace after subscribing. Create this dashboard from scratch.
+Dashboard Structure:
+The dashboard must have a clear navigation menu (e.g., a sidebar) with links to: My Properties, Add New Property, and Subscription.
+Subscription Management:
+The "Subscription" page must display the agent's current plan (e.g., "You are on the Gold Plan").
+It should show the next renewal date and a button to "Manage Billing," which links to the Stripe customer portal.
+Property Management & Feature Gating:
+The "My Properties" page will display a table of the agent's current listings. Each row will show the property photo, address, price, and status (e.g., Active, Draft).
+Each row must have "Edit" and "Delete" buttons.
+CRITICAL: The system must enforce the plan limit. If an agent on the Gold plan has 35 active listings, the "Add New Property" button must be disabled or show a message prompting them to upgrade or contact support.
+Property Creation Form & Final Output:
+The "Add New Property" link leads to a comprehensive creation form. This form is the core of the agent's work.
+The form must contain all necessary fields to generate a public listing identical in detail to this example: https://www.properstar.com/listing/101827785.
+This includes (but is not limited to) fields for:
+Basic Info: Title, Buy/Rent, Price, Full Address (Street, City, Country).
+Property Details: Type (Villa, Apartment), Bedrooms, Bathrooms, Living Area (sq ft or m²), Plot Area, Year Built, Floor Level.
+Media: A multi-image uploader.
+Text: A rich-text editor for the main description.
+Features: A checklist of amenities (Pool, Garage, Balcony, Air Conditioning, etc.).
+When the agent submits this form, a new public property page is created at a URL like /listing/{property-id}, and it must be styled and structured to match the visual detail and data richness of the provided link.
+Final Command:
+Execute this entire, three-phase plan. The goal is a seamless, logical, and fully functional experience for both user types, culminating in a powerful and detailed property management system for paying agents.

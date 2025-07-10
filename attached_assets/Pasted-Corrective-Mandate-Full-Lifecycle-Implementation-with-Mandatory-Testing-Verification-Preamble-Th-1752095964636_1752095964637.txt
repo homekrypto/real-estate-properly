@@ -1,0 +1,66 @@
+Corrective Mandate: Full Lifecycle Implementation with Mandatory Testing & Verification
+Preamble:
+The previous attempt to implement the user and agent lifecycles failed. The result was a non-functional facade. This prompt is a strict corrective mandate to build the required features from scratch and to integrate a rigorous testing and verification protocol into the development process. Failure to provide the specified logs and pass the test cases for each step will be considered a failure of the entire prompt.
+Phase I: The Standard User (Seeker) Lifecycle - Build, Test, Verify
+1.1. User Registration:
+Build: Create the "Sign Up" page/modal with Full Name, Email, and Password fields.
+Test Case: I will attempt to register a new user with the email seeker@example.com.
+MANDATORY VERIFICATION: After I submit the form, you must:
+Log to the console: [DEBUG] Attempting to create user: seeker@example.com.
+Upon success, log: [SUCCESS] User 'seeker@example.com' created in database. Role: 'seeker', Status: 'unverified'.
+Log: [INFO] Verification email simulation triggered for seeker@example.com.
+The user interface MUST display the message: "Registration successful. Please check your email to verify your account."
+1.2. Email Verification:
+Build: Create the back-end logic to handle a verification token.
+Test Case: I will simulate clicking the verification link for seeker@example.com.
+MANDATORY VERIFICATION: Upon visiting the verification URL, you must:
+Log to the console: [DEBUG] Verification token received. Looking up user.
+Log: [SUCCESS] User 'seeker@example.com' status updated to 'verified'.
+The user interface MUST display the message: "Account verified. You may now log in."
+1.3. User Login:
+Build: Create the "Login" page/modal.
+Test Case: I will attempt to log in with the verified seeker@example.com account.
+MANDATORY VERIFICATION: Upon successful login, you must:
+Log to the console: [SUCCESS] Authentication successful for 'seeker@example.com'. Session initiated.
+The user MUST be redirected to the homepage.
+The header MUST dynamically update to show "Dashboard" and "Logout" buttons.
+Phase II: The Agent Lifecycle & Monetization - Build, Test, Verify
+2.1. Agent Registration & Pricing Redirect:
+Build: Add an "I am a Real Estate Agent" checkbox to the Sign Up form.
+Test Case: I will register a new user agent@example.com, check the box, and complete the email verification. Then, I will log in.
+MANDATORY VERIFICATION:
+The database entry for agent@example.com must have role: 'agent'.
+Immediately upon the first successful login, the user MUST be redirected to the /pricing page.
+Log to the console: [INFO] Agent 'agent@example.com' has no active subscription. Forcing redirect to /pricing.
+2.2. Subscription & Stripe Checkout:
+Build: The /pricing page with the three plans (Bronze: $40/10, Silver: $60/25, Gold: $80/35) and the annual 10% discount toggle. Integrate Stripe Checkout.
+Test Case: As agent@example.com, I will select the "Gold" plan with the annual payment option.
+MANDATORY VERIFICATION:
+When I click "Choose Plan," log: [STRIPE] Creating Checkout session for user 'agent@example.com' with price_id_for_gold_annual.
+I MUST be redirected to a checkout.stripe.com page.
+After a (simulated) successful payment, I must be automatically redirected back to a newly created /agent-dashboard.
+A webhook handler must log: [STRIPE WEBHOOK SUCCESS] Payment confirmed for 'agent@example.com'. Subscription 'Gold' is now active.
+The database must be updated to link the agent@example.com user to the "Gold" subscription plan with an expiry date one year from now.
+Phase III: The Agent Dashboard & Property Management - Build, Test, Verify
+3.1. Dashboard & Subscription Display:
+Build: The /agent-dashboard with My Properties, Add New Property, and Subscription sections.
+Test Case: I will navigate to the Subscription tab in the dashboard.
+MANDATORY VERIFICATION:
+The page must clearly display: "Current Plan: Gold."
+Print the full user object for agent@example.com from the database to the console, showing the active subscription details.
+3.2. Property Creation Form:
+Build: A comprehensive "Add New Property" form with all fields necessary to replicate the detail level of the example link: https://www.properstar.com/listing/101827785. This includes a multi-image uploader.
+Test Case: I will fill out every single field in the form for a new property and upload 3 images.
+MANDATORY VERIFICATION:
+Upon submission, log: [SUCCESS] Property created by 'agent@example.com'. 3 images uploaded.
+Log a JSON representation of the new property object as it was saved to the database.
+I MUST be redirected to the new public listing page, which must be styled and populated with ALL the data I just entered.
+3.3. Feature Gating & Listing Limits (CRITICAL TEST):
+Build: The logic to enforce subscription limits.
+Test Case: You will first need to simulate that the "Gold" plan agent (agent@example.com) has already created 35 properties. Then, as that agent, I will attempt to visit the "Add New Property" page again.
+MANDATORY VERIFICATION:
+The "Add New Property" button on the dashboard must be disabled or hidden.
+If I try to access the /agent-dashboard/add-new-property URL directly, I MUST be redirected or shown an error page stating: "You have reached your listing limit of 35 for the Gold plan. Please upgrade to manage more properties."
+Log to the console: [FEATURE GATE] Agent 'agent@example.com' (35/35 listings) blocked from accessing property creation form.
+Final Command:
+Execute this corrective mandate. Provide the requested debug and success logs at each step as proof of functional completion. I will be following these exact test cases to validate the work. No partial credit will be given.

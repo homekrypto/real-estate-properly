@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: hsl(0, 0%, 100%);
+    --foreground: hsl(20, 14.3%, 4.1%);
+    --card: hsl(0, 0%, 100%);
+    --card-foreground: hsl(20, 14.3%, 4.1%);
+    --popover: hsl(0, 0%, 100%);
+    --popover-foreground: hsl(20, 14.3%, 4.1%);
+    --primary: hsl(138, 50%, 27%);
+    --primary-foreground: hsl(0, 0%, 98%);
+    --secondary: hsl(60, 4.8%, 95.9%);
+    --secondary-foreground: hsl(24, 9.8%, 10%);
+    --muted: hsl(60, 4.8%, 95.9%);
+    --muted-foreground: hsl(25, 5.3%, 44.7%);
+    --accent: hsl(60, 4.8%, 95.9%);
+    --accent-foreground: hsl(24, 9.8%, 10%);
+    --destructive: hsl(0, 84.2%, 60.2%);
+    --destructive-foreground: hsl(60, 9.1%, 97.8%);
+    --border: hsl(20, 5.9%, 90%);
+    --input: hsl(20, 5.9%, 90%);
+    --ring: hsl(138, 50%, 27%);
+    --chart-1: hsl(12, 76%, 61%);
+    --chart-2: hsl(173, 58%, 39%);
+    --chart-3: hsl(197, 37%, 24%);
+    --chart-4: hsl(43, 74%, 66%);
+    --chart-5: hsl(27, 87%, 67%);
+    --radius: 0.75rem;
+    
+    /* Custom Rolex-inspired colors */
+    --forest-50: hsl(132, 50%, 96%);
+    --forest-100: hsl(131, 52%, 89%);
+    --forest-200: hsl(133, 51%, 79%);
+    --forest-300: hsl(133, 50%, 64%);
+    --forest-400: hsl(134, 45%, 49%);
+    --forest-500: hsl(138, 50%, 37%);
+    --forest-600: hsl(138, 50%, 27%);
+    --forest-700: hsl(140, 51%, 22%);
+    --forest-800: hsl(142, 54%, 18%);
+    --forest-900: hsl(144, 60%, 12%);
+    
+    --gold-50: hsl(54, 92%, 95%);
+    --gold-100: hsl(54, 96%, 88%);
+    --gold-200: hsl(52, 98%, 77%);
+    --gold-300: hsl(50, 95%, 53%);
+    --gold-400: hsl(47, 96%, 49%);
+    --gold-500: hsl(45, 93%, 47%);
+    --gold-600: hsl(41, 96%, 40%);
+    --gold-700: hsl(35, 91%, 33%);
+    --gold-800: hsl(32, 81%, 29%);
+    --gold-900: hsl(28, 73%, 26%);
+  }
+
+  .dark {
+    --background: hsl(20, 14.3%, 4.1%);
+    --foreground: hsl(60, 9.1%, 97.8%);
+    --card: hsl(20, 14.3%, 4.1%);
+    --card-foreground: hsl(60, 9.1%, 97.8%);
+    --popover: hsl(20, 14.3%, 4.1%);
+    --popover-foreground: hsl(60, 9.1%, 97.8%);
+    --primary: hsl(138, 50%, 37%);
+    --primary-foreground: hsl(144, 60%, 12%);
+    --secondary: hsl(12, 6.5%, 15.1%);
+    --secondary-foreground: hsl(60, 9.1%, 97.8%);
+    --muted: hsl(12, 6.5%, 15.1%);
+    --muted-foreground: hsl(24, 5.4%, 63.9%);
+    --accent: hsl(12, 6.5%, 15.1%);
+    --accent-foreground: hsl(60, 9.1%, 97.8%);
+    --destructive: hsl(0, 62.8%, 30.6%);
+    --destructive-foreground: hsl(60, 9.1%, 97.8%);
+    --border: hsl(12, 6.5%, 15.1%);
+    --input: hsl(12, 6.5%, 15.1%);
+    --ring: hsl(138, 50%, 37%);
+    --chart-1: hsl(220, 70%, 50%);
+    --chart-2: hsl(160, 60%, 45%);
+    --chart-3: hsl(30, 80%, 55%);
+    --chart-4: hsl(280, 65%, 60%);
+    --chart-5: hsl(340, 75%, 55%);
+    
+    /* Custom dark mode colors */
+    --forest-50: hsl(144, 60%, 12%);
+    --forest-100: hsl(142, 54%, 18%);
+    --forest-200: hsl(140, 51%, 22%);
+    --forest-300: hsl(138, 50%, 27%);
+    --forest-400: hsl(138, 50%, 37%);
+    --forest-500: hsl(134, 45%, 49%);
+    --forest-600: hsl(133, 50%, 64%);
+    --forest-700: hsl(133, 51%, 79%);
+    --forest-800: hsl(131, 52%, 89%);
+    --forest-900: hsl(132, 50%, 96%);
+    
+    --gold-50: hsl(28, 73%, 26%);
+    --gold-100: hsl(32, 81%, 29%);
+    --gold-200: hsl(35, 91%, 33%);
+    --gold-300: hsl(41, 96%, 40%);
+    --gold-400: hsl(45, 93%, 47%);
+    --gold-500: hsl(47, 96%, 49%);
+    --gold-600: hsl(50, 95%, 53%);
+    --gold-700: hsl(52, 98%, 77%);
+    --gold-800: hsl(54, 96%, 88%);
+    --gold-900: hsl(54, 92%, 95%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-luxury {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-modern {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

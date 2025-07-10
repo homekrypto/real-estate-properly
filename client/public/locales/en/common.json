@@ -1,0 +1,681 @@
+{
+  "nav": {
+    "buy": "Buy",
+    "rent": "Rent",
+    "agents": "Agents",
+    "pricing": "Pricing",
+    "insights": "Insights"
+  },
+  "auth": {
+    "login": "Login",
+    "signUp": "Sign Up",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone",
+    "company": "Company",
+    "language": "Language",
+    "buyer": "Buyer",
+    "agent": "Agent",
+    "developer": "Developer",
+    "welcomeBack": "Welcome back",
+    "joinProperly": "Join Properly",
+    "loginDescription": "Access your account to discover luxury properties worldwide and connect with elite agents.",
+    "registerDescription": "Join the world's most exclusive real estate platform and unlock access to premium properties globally.",
+    "signInToAccount": "Sign in to your account",
+    "createAccount": "Create your account",
+    "enterCredentials": "Enter your credentials to access your account",
+    "getStartedToday": "Get started with Properly today",
+    "emailPlaceholder": "Enter your email address",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "firstNamePlaceholder": "Enter your first name",
+    "lastNamePlaceholder": "Enter your last name",
+    "phonePlaceholder": "Enter your phone number",
+    "companyPlaceholder": "Enter your company name",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?",
+    "signingIn": "Signing in...",
+    "creatingAccount": "Creating account...",
+    "fillRequired": "Please fill in all required fields",
+    "passwordsNotMatch": "Passwords do not match",
+    "passwordTooShort": "Password must be at least 8 characters",
+    "mustAgreeToTerms": "You must agree to the terms and conditions",
+    "loginSuccess": "Login successful",
+    "loginError": "Login failed",
+    "registrationSuccess": "Account created successfully",
+    "registrationError": "Registration failed",
+    "registrationFailed": "Failed to create account",
+    "welcomeMessage": "Welcome to Properly, {{name}}!",
+    "invalidCredentials": "Invalid email or password",
+    "agreeToTerms": "I agree to the",
+    "termsOfService": "Terms of Service",
+    "and": "and",
+    "privacyPolicy": "Privacy Policy",
+    "marketingConsent": "I would like to receive marketing communications and updates",
+    "professionalAccount": "Need a professional account?",
+    "agentSignup": "Agent Signup",
+    "developerSignup": "Developer Signup",
+    "features": {
+      "globalAccess": "Access to global property network",
+      "exclusiveProperties": "Exclusive luxury properties",
+      "expertAgents": "Connect with expert agents"
+    },
+    "benefits": {
+      "globalNetwork": "Access to global luxury property network",
+      "exclusiveListings": "Exclusive off-market listings",
+      "expertSupport": "Expert agent support",
+      "advancedTools": "Advanced search and analytics tools"
+    },
+    "userTypes": {
+      "buyer": {
+        "title": "Property Buyer",
+        "description": "Find your dream luxury property worldwide"
+      },
+      "agent": {
+        "title": "Real Estate Agent",
+        "description": "List properties and connect with global buyers"
+      },
+      "developer": {
+        "title": "Property Developer",
+        "description": "Showcase development projects internationally"
+      }
+    }
+  },
+  "hero": {
+    "findYour": "Find Your",
+    "dreamHome": "Dream Home",
+    "description": "Discover luxury properties worldwide with our premium platform. Connect with elite agents across 35+ countries.",
+    "premiumListed": "Premium Listed",
+    "verifiedProperties": "Verified Properties"
+  },
+  "search": {
+    "country": "Country/Region",
+    "propertyType": "Property Type",
+    "budget": "Budget",
+    "selectCountry": "Select Country",
+    "allTypes": "All Types",
+    "anyPrice": "Any Price",
+    "searchProperties": "Search Luxury Properties",
+    "listingType": "Listing Type",
+    "location": "Location",
+    "region": "Region",
+    "city": "City",
+    "priceRange": "Price Range",
+    "minPrice": "Min Price",
+    "maxPrice": "Max Price",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "anyBedrooms": "Any Bedrooms",
+    "anyBathrooms": "Any Bathrooms",
+    "filters": "Filters",
+    "sortNewest": "Newest First",
+    "sortPriceLow": "Price: Low to High",
+    "sortPriceHigh": "Price: High to Low",
+    "sortPopular": "Most Popular",
+    "noResults": "No properties found",
+    "noResultsDescription": "Try adjusting your search criteria",
+    "properties": "Properties",
+    "propertiesIn": "Properties in",
+    "propertiesFound": "properties found",
+    "selectType": "Select Type"
+  },
+  "listingTypes": {
+    "sale": "For Sale",
+    "rent": "For Rent"
+  },
+  "propertyTypes": {
+    "villa": "Villa",
+    "apartment": "Apartment",
+    "penthouse": "Penthouse",
+    "farmhouse": "Farmhouse"
+  },
+  "property": {
+    "beds": "beds",
+    "baths": "baths",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "area": "Area",
+    "agent": "Agent",
+    "views": "views",
+    "listed": "Listed",
+    "description": "Description",
+    "features": "Features & Amenities",
+    "location": "Location",
+    "mapPlaceholder": "Interactive map will be displayed here",
+    "contactAgent": "Contact Agent",
+    "callAgent": "Call Agent",
+    "emailAgent": "Email Agent",
+    "messageAgent": "I'm interested in this property. Please contact me with more information.",
+    "sendMessage": "Send Message",
+    "quickActions": "Quick Actions",
+    "scheduleViewing": "Schedule Viewing",
+    "requestInfo": "Request Information",
+    "addedToFavorites": "Added to favorites",
+    "favoriteSuccess": "Property has been added to your favorites",
+    "favoriteError": "Failed to add property to favorites",
+    "messageSent": "Message sent",
+    "messageSuccess": "Your message has been sent to the agent",
+    "messageError": "Failed to send message",
+    "messageRequired": "Please enter a message",
+    "notFound": "Property not found",
+    "notFoundDescription": "The property you're looking for doesn't exist or has been removed",
+    "backToSearch": "Back to Search",
+    "title": "Title",
+    "price": "Price",
+    "address": "Address"
+  },
+  "stats": {
+    "countries": "Countries",
+    "properties": "Properties",
+    "agents": "Elite Agents"
+  },
+  "featured": {
+    "title": "Featured",
+    "properties": "Properties",
+    "description": "Discover handpicked luxury properties from our premium portfolio",
+    "viewAll": "View All Properties"
+  },
+  "agent": {
+    "dashboard": "Agent Dashboard",
+    "managePortfolio": "Manage your global portfolio",
+    "eliteTitle": "Elite Agent",
+    "platform": "Platform",
+    "description": "Join our network of premium real estate professionals and reach qualified buyers across 35+ countries.",
+    "features": {
+      "globalNetwork": {
+        "title": "Global Network",
+        "description": "Broadcast to 80+ property portals worldwide including Mansion Global and Wall Street Journal."
+      },
+      "analytics": {
+        "title": "Performance Analytics",
+        "description": "Track listing performance, lead activity, and promotion effectiveness with detailed analytics."
+      },
+      "aiTools": {
+        "title": "AI-Powered Tools",
+        "description": "Leverage AI for property extraction with 96% accuracy and enhanced buyer targeting."
+      }
+    },
+    "joinNetwork": "Join Our Network",
+    "welcomeBack": "Welcome back",
+    "totalListings": "Total Listings",
+    "activeListings": "Active Listings",
+    "totalViews": "Total Views",
+    "newLeads": "New Leads",
+    "totalValue": "Total Value",
+    "globalViews": "Global Views",
+    "performance": "Performance",
+    "thisMonth": "this month",
+    "listings": "Listings",
+    "addProperty": "Add Property",
+    "analytics": "Analytics",
+    "leads": "Leads",
+    "subscription": "Subscription",
+    "myListings": "My Listings",
+    "newListing": "New Listing",
+    "noListings": "No listings yet",
+    "noListingsDescription": "Start by creating your first property listing",
+    "createFirstListing": "Create First Listing",
+    "active": "Active",
+    "inactive": "Inactive",
+    "addNewProperty": "Add New Property",
+    "propertyTitlePlaceholder": "Enter property title",
+    "propertyDescriptionPlaceholder": "Describe the property features and amenities",
+    "addressPlaceholder": "Enter full address",
+    "createListing": "Create Listing",
+    "propertyCreated": "Property created",
+    "propertyCreatedSuccess": "Your property listing has been created successfully",
+    "propertyCreatedError": "Failed to create property listing",
+    "propertyDeleted": "Property deleted",
+    "propertyDeletedSuccess": "Property has been deleted successfully",
+    "propertyDeletedError": "Failed to delete property",
+    "fillRequiredFields": "Please fill in all required fields",
+    "performanceOverview": "Performance Overview",
+    "globalReach": "Global Reach",
+    "countriesReached": "Countries reached",
+    "portalsActive": "Portals active",
+    "internationalViews": "International views",
+    "recentLeads": "Recent Leads",
+    "noLeads": "No leads yet",
+    "noLeadsDescription": "Leads will appear here when buyers contact you",
+    "currentPlan": "Current Plan",
+    "activePlan": "Active",
+    "listingsUsed": "Listings used",
+    "upgradePlan": "Upgrade Plan",
+    "manageBilling": "Manage Billing"
+  },
+  "developer": {
+    "dashboard": "Developer Dashboard",
+    "welcomeBack": "Welcome back",
+    "totalProjects": "Total Projects",
+    "activeProjects": "Active Projects",
+    "totalUnits": "Total Units",
+    "soldUnits": "Sold Units",
+    "totalRevenue": "Total Revenue",
+    "projects": "Projects",
+    "addProject": "Add Project",
+    "analytics": "Analytics",
+    "subscription": "Subscription",
+    "myProjects": "My Projects",
+    "newProject": "New Project",
+    "noProjects": "No projects yet",
+    "noProjectsDescription": "Start by creating your first development project",
+    "createFirstProject": "Create First Project",
+    "completed": "Completed",
+    "nearCompletion": "Near Completion",
+    "inProgress": "In Progress",
+    "unitsAvailable": "Units available",
+    "sold": "sold",
+    "addNewProject": "Add New Project",
+    "projectName": "Project Name",
+    "projectNamePlaceholder": "Enter project name",
+    "projectDescriptionPlaceholder": "Describe the development project",
+    "completionDate": "Completion Date",
+    "totalUnits": "Total Units",
+    "availableUnits": "Available Units",
+    "addressPlaceholder": "Enter project address",
+    "createProject": "Create Project",
+    "projectCreated": "Project created",
+    "projectCreatedSuccess": "Your development project has been created successfully",
+    "projectCreatedError": "Failed to create project",
+    "fillRequiredFields": "Please fill in all required fields",
+    "salesPerformance": "Sales Performance",
+    "thisQuarter": "this quarter",
+    "marketReach": "Market Reach",
+    "internationalBuyers": "International buyers",
+    "luxuryPortals": "Luxury portals",
+    "avgViewTime": "Avg. view time",
+    "currentPlan": "Current Plan",
+    "premiumDeveloperPlan": "Premium developer solution for international marketing",
+    "activePlan": "Active",
+    "planFeatures": "Plan Features",
+    "unlimitedProjects": "Unlimited projects",
+    "globalDistribution": "Global distribution network",
+    "luxuryPortalAccess": "Luxury portal access",
+    "dedicatedSupport": "Dedicated account support",
+    "customBranding": "Custom branding options",
+    "usage": "Usage",
+    "projectsUsed": "Projects used",
+    "unitsListed": "Units listed",
+    "manageBilling": "Manage Billing",
+    "downloadInvoices": "Download Invoices"
+  },
+  "user": {
+    "dashboard": "My Dashboard",
+    "welcomeBack": "Welcome back",
+    "favorites": "Favorites",
+    "savedSearches": "Saved Searches",
+    "messages": "Messages",
+    "settings": "Settings",
+    "membership": "Membership",
+    "premium": "Premium",
+    "myFavorites": "My Favorites",
+    "noFavorites": "No favorites yet",
+    "noFavoritesDescription": "Properties you favorite will appear here",
+    "browseProperties": "Browse Properties",
+    "favoriteRemoved": "Removed from favorites",
+    "favoriteRemovedSuccess": "Property has been removed from your favorites",
+    "favoriteRemovedError": "Failed to remove property from favorites",
+    "mySavedSearches": "My Saved Searches",
+    "noSavedSearches": "No saved searches",
+    "noSavedSearchesDescription": "Save your search criteria to get notified of new properties",
+    "createSearch": "Create Search",
+    "filters": "filters",
+    "emailAlerts": "Email alerts",
+    "runSearch": "Run Search",
+    "searchDeleted": "Search deleted",
+    "searchDeletedSuccess": "Saved search has been deleted",
+    "searchDeletedError": "Failed to delete saved search",
+    "myMessages": "My Messages",
+    "noMessages": "No messages yet",
+    "noMessagesDescription": "Messages from agents will appear here",
+    "new": "New",
+    "regardingProperty": "Regarding property",
+    "profileSettings": "Profile Settings",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "bio": "Bio",
+    "bioPlaceholder": "Tell us about yourself",
+    "saveProfile": "Save Profile",
+    "profileUpdated": "Profile updated",
+    "profileUpdatedSuccess": "Your profile has been updated successfully",
+    "profileUpdatedError": "Failed to update profile"
+  },
+  "pricing": {
+    "title": "Professional",
+    "plans": {
+      "title": "Plans",
+      "global20": {
+        "name": "Global 20",
+        "description": "Perfect for independent agents"
+      },
+      "global50": {
+        "name": "Global 50",
+        "description": "For growing agencies"
+      },
+      "global100": {
+        "name": "Global 100",
+        "description": "For established agencies"
+      }
+    },
+    "subtitle": "Join Properly now and reach a global audience of qualified buyers worldwide",
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "save20": "Save 20%",
+    "month": "month",
+    "save": "Save",
+    "annually": "annually",
+    "mostPopular": "Most Popular",
+    "getStarted": "Get Started",
+    "features": {
+      "listings20": "Up to 20 listings",
+      "listings50": "Up to 50 listings",
+      "listings100": "Up to 100 listings",
+      "globalAudience": "Global audience in 35 countries",
+      "additionalPortals": "80+ additional portals",
+      "crmIntegration": "CRM integration",
+      "advancedCRM": "Advanced CRM integration",
+      "fullCRM": "Full CRM integration",
+      "basicSupport": "Basic support",
+      "prioritySupport": "Priority support",
+      "dedicatedManager": "Dedicated account manager",
+      "performanceAnalytics": "Performance analytics",
+      "advancedAnalytics": "Advanced analytics",
+      "customBranding": "Custom branding"
+    },
+    "enterprise": {
+      "title": "Need higher volume?",
+      "description": "Let's create a plan that's uniquely yours. Custom solutions for developers and large agencies.",
+      "contact": "Contact Sales",
+      "volume": {
+        "title": "High Volume",
+        "description": "Custom pricing for large portfolios"
+      },
+      "developers": {
+        "title": "Developers",
+        "description": "Specialized tools for development projects"
+      }
+    },
+    "benefits": {
+      "title": "Why Choose Properly?",
+      "description": "Experience the advantages of our global luxury real estate platform",
+      "global": {
+        "title": "Global Network",
+        "description": "Reach buyers across 80+ property portals worldwide"
+      },
+      "analytics": {
+        "title": "Advanced Analytics",
+        "description": "Track performance and optimize your listings"
+      },
+      "network": {
+        "title": "Elite Network",
+        "description": "Connect with premium agents and buyers"
+      },
+      "ai": {
+        "title": "AI-Powered",
+        "description": "Leverage artificial intelligence for better results"
+      }
+    },
+    "stats": {
+      "professionals": "Real Estate Professionals",
+      "buyers": "Potential Buyers",
+      "portals": "Property Portals",
+      "countries": "Countries"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "question1": "How does the global distribution work?",
+      "answer1": "Your listings are automatically distributed to our network of 80+ premium property portals across 35+ countries.",
+      "question2": "Can I cancel my subscription anytime?",
+      "answer2": "Yes, you can cancel your subscription at any time. All plans are month-to-month with no long-term commitments.",
+      "question3": "What kind of support do you provide?",
+      "answer3": "We offer comprehensive support including dedicated account managers for higher-tier plans and 24/7 customer service.",
+      "question4": "Do you offer custom solutions?",
+      "answer4": "Yes, we provide custom enterprise solutions for large agencies and developers with specific requirements."
+    },
+    "cta": {
+      "title": "Ready to reach global buyers?",
+      "description": "Join thousands of professionals who trust Properly to market their luxury properties worldwide.",
+      "start": "Start Free Trial",
+      "contact": "Contact Sales"
+    }
+  },
+  "blog": {
+    "title": "Market",
+    "insights": "Insights",
+    "description": "Stay informed with the latest trends and expert analysis in international real estate",
+    "searchPlaceholder": "Search articles...",
+    "allCategories": "All Categories",
+    "featured": "Featured",
+    "latestPosts": "Latest Articles",
+    "searchResults": "Search Results",
+    "articles": "articles",
+    "noResults": "No articles found",
+    "noResultsDescription": "Try adjusting your search terms",
+    "newsletter": {
+      "title": "Stay Updated",
+      "description": "Get the latest market insights and property trends delivered to your inbox",
+      "emailPlaceholder": "Enter your email",
+      "subscribe": "Subscribe"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "us": "Us",
+    "description": "Get in touch with our team of luxury real estate experts. We're here to help you with all your property needs.",
+    "getInTouch": "Get in Touch",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "inquiryType": "Inquiry Type",
+    "namePlaceholder": "Enter your full name",
+    "emailPlaceholder": "Enter your email address",
+    "phonePlaceholder": "Enter your phone number",
+    "subjectPlaceholder": "Enter message subject",
+    "messagePlaceholder": "Enter your message here",
+    "selectInquiry": "Select inquiry type",
+    "sendMessage": "Send Message",
+    "messageSent": "Message sent",
+    "messageSuccess": "Your message has been sent successfully",
+    "messageError": "Failed to send message",
+    "fillRequired": "Please fill in all required fields",
+    "contactInfo": "Contact Information",
+    "emailDescription": "Send us an email anytime",
+    "phoneDescription": "Call us during business hours",
+    "addressDescription": "Visit our office",
+    "hoursDescription": "Monday to Friday",
+    "addressValue": "123 Luxury Avenue, Premium District, New York, NY 10001",
+    "hoursValue": "9:00 AM - 6:00 PM EST",
+    "urgentInquiry": "Urgent Inquiry?",
+    "urgentDescription": "For urgent matters, call us directly",
+    "callNow": "Call Now",
+    "findUs": "Find Us",
+    "mapPlaceholder": "Interactive map will be displayed here",
+    "inquiryTypes": {
+      "general": "General Inquiry",
+      "agent": "Agent Services",
+      "developer": "Developer Services",
+      "support": "Technical Support",
+      "partnership": "Partnership",
+      "media": "Media & Press"
+    },
+    "departments": {
+      "title": "Departments",
+      "description": "Contact the right department for faster assistance",
+      "sales": {
+        "title": "Sales",
+        "description": "Property listings and agent services"
+      },
+      "support": {
+        "title": "Support",
+        "description": "Technical support and account help"
+      },
+      "partnerships": {
+        "title": "Partnerships",
+        "description": "Business partnerships and integrations"
+      },
+      "international": {
+        "title": "International",
+        "description": "Global expansion and markets"
+      }
+    }
+  },
+  "about": {
+    "title": "About",
+    "properly": "Properly",
+    "subtitle": "The world's most trusted luxury real estate platform, connecting discerning buyers with premium properties across 35+ countries.",
+    "stats": {
+      "professionals": "Real Estate Professionals",
+      "buyers": "Potential Buyers",
+      "countries": "Countries",
+      "portals": "Property Portals"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To democratize access to luxury real estate by connecting buyers, sellers, and agents through cutting-edge technology and unparalleled service excellence."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To become the global standard for luxury property transactions, making international real estate accessible, transparent, and efficient for everyone."
+    },
+    "story": {
+      "title": "Our Story",
+      "subtitle": "From a simple idea to the world's leading luxury real estate platform",
+      "paragraph1": "Founded in 2018, Properly began with a vision to revolutionize how luxury properties are marketed and discovered globally. Our founders recognized that the traditional real estate market was fragmented, with buyers and sellers struggling to connect across international boundaries.",
+      "paragraph2": "What started as a platform for connecting European luxury properties with international buyers has evolved into the world's most comprehensive luxury real estate network, spanning 35+ countries and featuring over 10,000 premium properties.",
+      "paragraph3": "Today, Properly serves over 200,000 real estate professionals and reaches more than 150 million potential buyers worldwide, making us the trusted choice for luxury property transactions globally."
+    },
+    "award": {
+      "title": "Industry Leader",
+      "year": "2024"
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "The principles that guide everything we do",
+      "excellence": {
+        "title": "Excellence",
+        "description": "We strive for perfection in every aspect of our service, from technology to customer experience."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "description": "We believe in honest, open communication and clear processes for all our stakeholders."
+      },
+      "trust": {
+        "title": "Trust",
+        "description": "Building lasting relationships through reliability, security, and consistent delivery."
+      },
+      "partnership": {
+        "title": "Partnership",
+        "description": "We succeed when our clients succeed, creating mutually beneficial long-term partnerships."
+      }
+    },
+    "timeline": {
+      "title": "Our Journey",
+      "subtitle": "Key milestones in Properly's evolution"
+    },
+    "milestones": {
+      "2018": {
+        "title": "Company Founded",
+        "description": "Properly launches with focus on European luxury properties"
+      },
+      "2019": {
+        "title": "Global Expansion",
+        "description": "Extended services to 15 countries and 1,000+ properties"
+      },
+      "2021": {
+        "title": "Technology Innovation",
+        "description": "Launched AI-powered property matching and virtual tours"
+      },
+      "2023": {
+        "title": "Market Leadership",
+        "description": "Reached 100,000+ professionals and 35+ countries"
+      },
+      "2025": {
+        "title": "Future Vision",
+        "description": "Expanding to 50+ countries with enhanced AR/VR experiences"
+      }
+    },
+    "team": {
+      "title": "Leadership Team",
+      "subtitle": "Meet the experts driving Properly's global success",
+      "ceo": {
+        "role": "Chief Executive Officer",
+        "bio": "Former real estate executive with 20+ years of international property experience"
+      },
+      "cto": {
+        "role": "Chief Technology Officer",
+        "bio": "Technology visionary specializing in AI and machine learning applications"
+      },
+      "coo": {
+        "role": "Chief Operating Officer",
+        "bio": "Operations expert with deep expertise in global business expansion"
+      }
+    },
+    "cta": {
+      "title": "Join the Properly Family",
+      "description": "Whether you're buying, selling, or marketing luxury properties, we're here to elevate your real estate experience.",
+      "contact": "Contact Us",
+      "pricing": "View Pricing"
+    }
+  },
+  "network": {
+    "global": "Our Global",
+    "network": "Network",
+    "description": "Partner with leading luxury property portals worldwide, including Mansion Global and Wall Street Journal Real Estate",
+    "stats": {
+      "buyers": "Potential Buyers",
+      "portals": "Property Portals",
+      "countries": "Countries",
+      "languages": "Languages"
+    }
+  },
+  "footer": {
+    "description": "The world's leading luxury real estate platform, connecting discerning buyers with premium properties across 35+ countries.",
+    "quickLinks": "Quick Links",
+    "propertiesForSale": "Properties for Sale",
+    "propertiesForRent": "Properties for Rent",
+    "findAgent": "Find an Agent",
+    "marketInsights": "Market Insights",
+    "investmentGuide": "Investment Guide",
+    "forProfessionals": "For Professionals",
+    "agentPlans": "Agent Plans",
+    "developerSolutions": "Developer Solutions",
+    "apiDocs": "API Documentation",
+    "marketingTools": "Marketing Tools",
+    "supportCenter": "Support Center",
+    "copyright": "© 2025 Properly. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "common": {
+    "error": "Error",
+    "success": "Success",
+    "loading": "Loading",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "back": "Back",
+    "more": "more",
+    "sending": "Sending...",
+    "saving": "Saving...",
+    "creating": "Creating...",
+    "all": "All"
+  }
+}

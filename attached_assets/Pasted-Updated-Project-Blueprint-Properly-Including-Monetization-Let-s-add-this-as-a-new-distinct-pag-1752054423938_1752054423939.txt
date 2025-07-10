@@ -1,0 +1,63 @@
+Updated Project Blueprint: "Properly" (Including Monetization)
+Let's add this as a new, distinct page and integrate its functionality throughout the development plan.
+Page 7: Agency & Developer Pricing Page
+This page is specifically designed for real estate professionals and is the primary gateway for them to become paying customers.
+Target Audience: Independent Agents, Real Estate Agencies, and Property Developers.
+Page Goal: Clearly communicate the value proposition of listing on "Properly" and convert professional visitors into subscribers.
+Content and Layout:
+Headline: "Join Properly now and reach a global audience of qualified buyers worldwide."
+Billing Toggle: An option to switch between "Billed Annually" (showing discounted price) and "Billed Monthly" (showing standard price).
+Pricing Tiers (Presented as comparison cards):
+Global 20:
+Title: The best plan for independent agents and small agencies.
+Price: USD 120/mo (with a note: "Billed annually in advance, save $180").
+Features:
+Publish up to 20 listings.
+Reach a global audience in 35 countries.
+Broadcast to 80+ additional portals.
+Seamless CRM integration.
+Call-to-Action Button: Get Started
+Global 50:
+Title: Our most popular plan for agencies with up to 50 listings.
+Price: USD 160/mo (with a note: "Billed annually in advance, save $240").
+Features: (Same as above, but with "Publish up to 50 listings").
+Call-to-Action Button: Get Started
+Global 100:
+Title: Our best plan for bigger agencies with up to 100 listings.
+Price: USD 240/mo (with a note: "Billed annually in advance, save $360").
+Features: (Same as above, but with "Publish up to 100 listings").
+Call-to-Action Button: Get Started
+Enterprise/Custom Plan Section:
+Headline: "Need a higher volume?"
+Text: "Let's create a plan that's uniquely yours..."
+Call-to-Action: A "Contact Us" button that links to a contact form.
+Developer Plan Section:
+Headline: "Are you a developer?"
+Text: "If you're a real estate developer... we have tailored plans..."
+Call-to-Action: A "Contact Us" button that links to a separate contact form tailored for developers.
+Underlying Functionality (The "Engine" for this Page):
+This page is much more than just text. To make it work, we need a robust back-end system:
+Payment Gateway Integration:
+Clicking a Get Started button will initiate a checkout process. This requires integrating a secure payment provider like Stripe or PayPal.
+The system will handle one-time annual payments and potentially recurring monthly subscriptions.
+Subscription Management:
+The Agent's user account in the database must be linked to their chosen subscription plan (Global 20, Global 50, etc.).
+The system must track the subscription status (Active, Canceled, Past Due).
+Feature Gating:
+This is critical. The application must enforce the limits of each plan. An agent on the "Global 20" plan must be prevented from uploading their 21st listing. This logic will be built into the agent's property management dashboard.
+Agent Sign-Up Flow:
+The Sign Up process for an agent will now be different from a regular user. It will likely guide them to this pricing page to choose a plan as part of their onboarding.
+Updated Development Roadmap
+The addition of this monetization layer significantly impacts our roadmap. Here is the revised plan:
+Phase 1: Back-End Foundation. (No change) Set up server and database schemas for Users, Properties, Agents. We will add a Subscriptions table.
+Phase 2: User Authentication. (No change) Build the complete Sign Up, Login for standard users (property seekers).
+Phase 3: Core Property Search. (No change) Populate the database with sample listings and build the search functionality so users can find properties.
+Phase 4: Agent & Subscription Foundation.
+Build the registration and profile pages for Agents.
+Build the Pricing Page (visually).
+Integrate a payment gateway (e.g., Stripe).
+Develop the back-end subscription logic that links an Agent to a chosen plan upon successful payment.
+Phase 5: Agent Functional Dashboard.
+Build the dashboard where a logged-in agent can manage their properties.
+Implement Feature Gating: Enforce the listing limits based on the agent's active subscription plan.
+Phase 6: Content & Polish. Build the Blog, static pages, and conduct final testing.

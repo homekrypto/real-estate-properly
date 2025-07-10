@@ -1,0 +1,681 @@
+{
+  "nav": {
+    "buy": "Kup",
+    "rent": "Wynajmij",
+    "agents": "Agenci",
+    "pricing": "Cennik",
+    "insights": "Analizy"
+  },
+  "auth": {
+    "login": "Zaloguj się",
+    "signUp": "Zarejestruj się",
+    "signIn": "Zaloguj się",
+    "signOut": "Wyloguj się",
+    "email": "Email",
+    "password": "Hasło",
+    "confirmPassword": "Potwierdź hasło",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "phone": "Telefon",
+    "company": "Firma",
+    "language": "Język",
+    "buyer": "Kupujący",
+    "agent": "Agent",
+    "developer": "Deweloper",
+    "welcomeBack": "Witaj ponownie",
+    "joinProperly": "Dołącz do Properly",
+    "loginDescription": "Uzyskaj dostęp do swojego konta, aby odkryć luksusowe nieruchomości na całym świecie i nawiązać kontakt z elitarnymi agentami.",
+    "registerDescription": "Dołącz do najbardziej ekskluzywnej platformy nieruchomości na świecie i odblokuj dostęp do luksusowych nieruchomości na całym świecie.",
+    "signInToAccount": "Zaloguj się do swojego konta",
+    "createAccount": "Utwórz swoje konto",
+    "enterCredentials": "Wprowadź swoje dane logowania",
+    "getStartedToday": "Zacznij z Properly już dziś",
+    "emailPlaceholder": "Wprowadź swój adres email",
+    "passwordPlaceholder": "Wprowadź swoje hasło",
+    "confirmPasswordPlaceholder": "Potwierdź swoje hasło",
+    "firstNamePlaceholder": "Wprowadź swoje imię",
+    "lastNamePlaceholder": "Wprowadź swoje nazwisko",
+    "phonePlaceholder": "Wprowadź swój numer telefonu",
+    "companyPlaceholder": "Wprowadź nazwę firmy",
+    "rememberMe": "Zapamiętaj mnie",
+    "forgotPassword": "Zapomniałeś hasła?",
+    "noAccount": "Nie masz konta?",
+    "alreadyHaveAccount": "Masz już konto?",
+    "signingIn": "Logowanie...",
+    "creatingAccount": "Tworzenie konta...",
+    "fillRequired": "Wypełnij wszystkie wymagane pola",
+    "passwordsNotMatch": "Hasła nie pasują do siebie",
+    "passwordTooShort": "Hasło musi mieć co najmniej 8 znaków",
+    "mustAgreeToTerms": "Musisz zaakceptować regulamin",
+    "loginSuccess": "Logowanie pomyślne",
+    "loginError": "Logowanie nieudane",
+    "registrationSuccess": "Konto utworzone pomyślnie",
+    "registrationError": "Rejestracja nieudana",
+    "registrationFailed": "Nie udało się utworzyć konta",
+    "welcomeMessage": "Witaj w Properly, {{name}}!",
+    "invalidCredentials": "Nieprawidłowy email lub hasło",
+    "agreeToTerms": "Zgadzam się z",
+    "termsOfService": "Regulaminem",
+    "and": "i",
+    "privacyPolicy": "Polityką Prywatności",
+    "marketingConsent": "Chciałbym otrzymywać komunikaty marketingowe i aktualizacje",
+    "professionalAccount": "Potrzebujesz konta profesjonalnego?",
+    "agentSignup": "Rejestracja Agenta",
+    "developerSignup": "Rejestracja Dewelopera",
+    "features": {
+      "globalAccess": "Dostęp do globalnej sieci nieruchomości",
+      "exclusiveProperties": "Ekskluzywne luksusowe nieruchomości",
+      "expertAgents": "Kontakt z ekspertami"
+    },
+    "benefits": {
+      "globalNetwork": "Dostęp do globalnej sieci luksusowych nieruchomości",
+      "exclusiveListings": "Ekskluzywne oferty spoza rynku",
+      "expertSupport": "Wsparcie ekspertów",
+      "advancedTools": "Zaawansowane narzędzia wyszukiwania i analityki"
+    },
+    "userTypes": {
+      "buyer": {
+        "title": "Kupujący Nieruchomość",
+        "description": "Znajdź swoją wymarzoną luksusową nieruchomość na całym świecie"
+      },
+      "agent": {
+        "title": "Agent Nieruchomości",
+        "description": "Wystawiaj nieruchomości i łącz się z globalnymi kupującymi"
+      },
+      "developer": {
+        "title": "Deweloper",
+        "description": "Prezentuj projekty deweloperskie międzynarodowo"
+      }
+    }
+  },
+  "hero": {
+    "findYour": "Znajdź Swój",
+    "dreamHome": "Wymarzony Dom",
+    "description": "Odkryj luksusowe nieruchomości na całym świecie z naszą platformą premium. Połącz się z elitarnymi agentami w ponad 35 krajach.",
+    "premiumListed": "Premium Listed",
+    "verifiedProperties": "Zweryfikowane Nieruchomości"
+  },
+  "search": {
+    "country": "Kraj/Region",
+    "propertyType": "Typ Nieruchomości",
+    "budget": "Budżet",
+    "selectCountry": "Wybierz Kraj",
+    "allTypes": "Wszystkie Typy",
+    "anyPrice": "Dowolna Cena",
+    "searchProperties": "Szukaj Luksusowych Nieruchomości",
+    "listingType": "Typ Oferty",
+    "location": "Lokalizacja",
+    "region": "Region",
+    "city": "Miasto",
+    "priceRange": "Przedział Cenowy",
+    "minPrice": "Cena Min",
+    "maxPrice": "Cena Max",
+    "bedrooms": "Sypialnie",
+    "bathrooms": "Łazienki",
+    "anyBedrooms": "Dowolna Liczba Sypialni",
+    "anyBathrooms": "Dowolna Liczba Łazienek",
+    "filters": "Filtry",
+    "sortNewest": "Najnowsze Pierwsze",
+    "sortPriceLow": "Cena: Od Najniższej",
+    "sortPriceHigh": "Cena: Od Najwyższej",
+    "sortPopular": "Najpopularniejsze",
+    "noResults": "Nie znaleziono nieruchomości",
+    "noResultsDescription": "Spróbuj dostosować kryteria wyszukiwania",
+    "properties": "Nieruchomości",
+    "propertiesIn": "Nieruchomości w",
+    "propertiesFound": "znalezionych nieruchomości",
+    "selectType": "Wybierz Typ"
+  },
+  "listingTypes": {
+    "sale": "Na Sprzedaż",
+    "rent": "Do Wynajęcia"
+  },
+  "propertyTypes": {
+    "villa": "Willa",
+    "apartment": "Apartament",
+    "penthouse": "Penthouse",
+    "farmhouse": "Dom Wiejski"
+  },
+  "property": {
+    "beds": "sypialni",
+    "baths": "łazienek",
+    "bedrooms": "Sypialnie",
+    "bathrooms": "Łazienki",
+    "area": "Powierzchnia",
+    "agent": "Agent",
+    "views": "wyświetleń",
+    "listed": "Wystawione",
+    "description": "Opis",
+    "features": "Cechy i Udogodnienia",
+    "location": "Lokalizacja",
+    "mapPlaceholder": "Tutaj zostanie wyświetlona interaktywna mapa",
+    "contactAgent": "Skontaktuj się z Agentem",
+    "callAgent": "Zadzwoń do Agenta",
+    "emailAgent": "Wyślij Email do Agenta",
+    "messageAgent": "Jestem zainteresowany tą nieruchomością. Proszę o kontakt z więcej informacjami.",
+    "sendMessage": "Wyślij Wiadomość",
+    "quickActions": "Szybkie Działania",
+    "scheduleViewing": "Umów Oglądanie",
+    "requestInfo": "Poproś o Informacje",
+    "addedToFavorites": "Dodano do ulubionych",
+    "favoriteSuccess": "Nieruchomość została dodana do ulubionych",
+    "favoriteError": "Nie udało się dodać nieruchomości do ulubionych",
+    "messageSent": "Wiadomość wysłana",
+    "messageSuccess": "Twoja wiadomość została wysłana do agenta",
+    "messageError": "Nie udało się wysłać wiadomości",
+    "messageRequired": "Proszę wprowadzić wiadomość",
+    "notFound": "Nieruchomość nie znaleziona",
+    "notFoundDescription": "Nieruchomość, której szukasz, nie istnieje lub została usunięta",
+    "backToSearch": "Powrót do Wyszukiwania",
+    "title": "Tytuł",
+    "price": "Cena",
+    "address": "Adres"
+  },
+  "stats": {
+    "countries": "Kraje",
+    "properties": "Nieruchomości",
+    "agents": "Elitarni Agenci"
+  },
+  "featured": {
+    "title": "Polecane",
+    "properties": "Nieruchomości",
+    "description": "Odkryj starannie wybrane luksusowe nieruchomości z naszego portfolio premium",
+    "viewAll": "Zobacz Wszystkie Nieruchomości"
+  },
+  "agent": {
+    "dashboard": "Panel Agenta",
+    "managePortfolio": "Zarządzaj swoim globalnym portfolio",
+    "eliteTitle": "Elitarny Agent",
+    "platform": "Platforma",
+    "description": "Dołącz do naszej sieci profesjonalistów premium i dotrzej do wykwalifikowanych kupujących w ponad 35 krajach.",
+    "features": {
+      "globalNetwork": {
+        "title": "Globalna Sieć",
+        "description": "Transmituj na ponad 80 portali nieruchomości na całym świecie, w tym Mansion Global i Wall Street Journal."
+      },
+      "analytics": {
+        "title": "Analityka Wydajności",
+        "description": "Śledź wydajność ofert, aktywność potencjalnych klientów i skuteczność promocji za pomocą szczegółowych analiz."
+      },
+      "aiTools": {
+        "title": "Narzędzia AI",
+        "description": "Wykorzystaj AI do ekstrakcji nieruchomości z 96% dokładnością i ulepszonego targetowania kupujących."
+      }
+    },
+    "joinNetwork": "Dołącz do Naszej Sieci",
+    "welcomeBack": "Witaj ponownie",
+    "totalListings": "Wszystkie Oferty",
+    "activeListings": "Aktywne Oferty",
+    "totalViews": "Wszystkie Wyświetlenia",
+    "newLeads": "Nowi Klienci",
+    "totalValue": "Całkowita Wartość",
+    "globalViews": "Globalne Wyświetlenia",
+    "performance": "Wydajność",
+    "thisMonth": "w tym miesiącu",
+    "listings": "Oferty",
+    "addProperty": "Dodaj Nieruchomość",
+    "analytics": "Analityka",
+    "leads": "Klienci",
+    "subscription": "Subskrypcja",
+    "myListings": "Moje Oferty",
+    "newListing": "Nowa Oferta",
+    "noListings": "Jeszcze brak ofert",
+    "noListingsDescription": "Zacznij od stworzenia swojej pierwszej oferty nieruchomości",
+    "createFirstListing": "Utwórz Pierwszą Ofertę",
+    "active": "Aktywna",
+    "inactive": "Nieaktywna",
+    "addNewProperty": "Dodaj Nową Nieruchomość",
+    "propertyTitlePlaceholder": "Wprowadź tytuł nieruchomości",
+    "propertyDescriptionPlaceholder": "Opisz cechy i udogodnienia nieruchomości",
+    "addressPlaceholder": "Wprowadź pełny adres",
+    "createListing": "Utwórz Ofertę",
+    "propertyCreated": "Nieruchomość utworzona",
+    "propertyCreatedSuccess": "Twoja oferta nieruchomości została utworzona pomyślnie",
+    "propertyCreatedError": "Nie udało się utworzyć oferty nieruchomości",
+    "propertyDeleted": "Nieruchomość usunięta",
+    "propertyDeletedSuccess": "Nieruchomość została usunięta pomyślnie",
+    "propertyDeletedError": "Nie udało się usunąć nieruchomości",
+    "fillRequiredFields": "Wypełnij wszystkie wymagane pola",
+    "performanceOverview": "Przegląd Wydajności",
+    "globalReach": "Globalny Zasięg",
+    "countriesReached": "Kraje objęte zasięgiem",
+    "portalsActive": "Aktywne portale",
+    "internationalViews": "Międzynarodowe wyświetlenia",
+    "recentLeads": "Ostatni Klienci",
+    "noLeads": "Jeszcze brak klientów",
+    "noLeadsDescription": "Klienci pojawią się tutaj, gdy kupujący skontaktują się z Tobą",
+    "currentPlan": "Obecny Plan",
+    "activePlan": "Aktywny",
+    "listingsUsed": "Wykorzystane oferty",
+    "upgradePlan": "Ulepsz Plan",
+    "manageBilling": "Zarządzaj Płatnościami"
+  },
+  "developer": {
+    "dashboard": "Panel Dewelopera",
+    "welcomeBack": "Witaj ponownie",
+    "totalProjects": "Wszystkie Projekty",
+    "activeProjects": "Aktywne Projekty",
+    "totalUnits": "Wszystkie Jednostki",
+    "soldUnits": "Sprzedane Jednostki",
+    "totalRevenue": "Całkowity Przychód",
+    "projects": "Projekty",
+    "addProject": "Dodaj Projekt",
+    "analytics": "Analityka",
+    "subscription": "Subskrypcja",
+    "myProjects": "Moje Projekty",
+    "newProject": "Nowy Projekt",
+    "noProjects": "Jeszcze brak projektów",
+    "noProjectsDescription": "Zacznij od stworzenia swojego pierwszego projektu deweloperskiego",
+    "createFirstProject": "Utwórz Pierwszy Projekt",
+    "completed": "Ukończone",
+    "nearCompletion": "Blisko Ukończenia",
+    "inProgress": "W Trakcie",
+    "unitsAvailable": "Dostępne jednostki",
+    "sold": "sprzedane",
+    "addNewProject": "Dodaj Nowy Projekt",
+    "projectName": "Nazwa Projektu",
+    "projectNamePlaceholder": "Wprowadź nazwę projektu",
+    "projectDescriptionPlaceholder": "Opisz projekt deweloperski",
+    "completionDate": "Data Ukończenia",
+    "totalUnits": "Wszystkie Jednostki",
+    "availableUnits": "Dostępne Jednostki",
+    "addressPlaceholder": "Wprowadź adres projektu",
+    "createProject": "Utwórz Projekt",
+    "projectCreated": "Projekt utworzony",
+    "projectCreatedSuccess": "Twój projekt deweloperski został utworzony pomyślnie",
+    "projectCreatedError": "Nie udało się utworzyć projektu",
+    "fillRequiredFields": "Wypełnij wszystkie wymagane pola",
+    "salesPerformance": "Wydajność Sprzedaży",
+    "thisQuarter": "w tym kwartale",
+    "marketReach": "Zasięg Rynkowy",
+    "internationalBuyers": "Międzynarodowi kupujący",
+    "luxuryPortals": "Portale luksusowe",
+    "avgViewTime": "Średni czas oglądania",
+    "currentPlan": "Obecny Plan",
+    "premiumDeveloperPlan": "Rozwiązanie premium dla deweloperów do marketingu międzynarodowego",
+    "activePlan": "Aktywny",
+    "planFeatures": "Funkcje Planu",
+    "unlimitedProjects": "Nieograniczone projekty",
+    "globalDistribution": "Globalna sieć dystrybucji",
+    "luxuryPortalAccess": "Dostęp do portali luksusowych",
+    "dedicatedSupport": "Dedykowane wsparcie konta",
+    "customBranding": "Opcje niestandardowego brandingu",
+    "usage": "Użycie",
+    "projectsUsed": "Wykorzystane projekty",
+    "unitsListed": "Wystawione jednostki",
+    "manageBilling": "Zarządzaj Płatnościami",
+    "downloadInvoices": "Pobierz Faktury"
+  },
+  "user": {
+    "dashboard": "Mój Panel",
+    "welcomeBack": "Witaj ponownie",
+    "favorites": "Ulubione",
+    "savedSearches": "Zapisane Wyszukiwania",
+    "messages": "Wiadomości",
+    "settings": "Ustawienia",
+    "membership": "Członkostwo",
+    "premium": "Premium",
+    "myFavorites": "Moje Ulubione",
+    "noFavorites": "Jeszcze brak ulubionych",
+    "noFavoritesDescription": "Nieruchomości, które dodasz do ulubionych, pojawią się tutaj",
+    "browseProperties": "Przeglądaj Nieruchomości",
+    "favoriteRemoved": "Usunięto z ulubionych",
+    "favoriteRemovedSuccess": "Nieruchomość została usunięta z ulubionych",
+    "favoriteRemovedError": "Nie udało się usunąć nieruchomości z ulubionych",
+    "mySavedSearches": "Moje Zapisane Wyszukiwania",
+    "noSavedSearches": "Brak zapisanych wyszukiwań",
+    "noSavedSearchesDescription": "Zapisz swoje kryteria wyszukiwania, aby otrzymywać powiadomienia o nowych nieruchomościach",
+    "createSearch": "Utwórz Wyszukiwanie",
+    "filters": "filtry",
+    "emailAlerts": "Alerty email",
+    "runSearch": "Uruchom Wyszukiwanie",
+    "searchDeleted": "Wyszukiwanie usunięte",
+    "searchDeletedSuccess": "Zapisane wyszukiwanie zostało usunięte",
+    "searchDeletedError": "Nie udało się usunąć zapisanego wyszukiwania",
+    "myMessages": "Moje Wiadomości",
+    "noMessages": "Jeszcze brak wiadomości",
+    "noMessagesDescription": "Wiadomości od agentów pojawią się tutaj",
+    "new": "Nowe",
+    "regardingProperty": "Dotyczące nieruchomości",
+    "profileSettings": "Ustawienia Profilu",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "email": "Email",
+    "phone": "Telefon",
+    "bio": "Bio",
+    "bioPlaceholder": "Opowiedz nam o sobie",
+    "saveProfile": "Zapisz Profil",
+    "profileUpdated": "Profil zaktualizowany",
+    "profileUpdatedSuccess": "Twój profil został pomyślnie zaktualizowany",
+    "profileUpdatedError": "Nie udało się zaktualizować profilu"
+  },
+  "pricing": {
+    "title": "Profesjonalne",
+    "plans": {
+      "title": "Plany",
+      "global20": {
+        "name": "Global 20",
+        "description": "Idealny dla niezależnych agentów"
+      },
+      "global50": {
+        "name": "Global 50",
+        "description": "Dla rozwijających się agencji"
+      },
+      "global100": {
+        "name": "Global 100",
+        "description": "Dla uznanych agencji"
+      }
+    },
+    "subtitle": "Dołącz do Properly już teraz i dotrzej do globalnej publiczności wykwalifikowanych kupujących na całym świecie",
+    "monthly": "Miesięczny",
+    "annual": "Roczny",
+    "save20": "Oszczędź 20%",
+    "month": "miesiąc",
+    "save": "Oszczędź",
+    "annually": "rocznie",
+    "mostPopular": "Najpopularniejszy",
+    "getStarted": "Rozpocznij",
+    "features": {
+      "listings20": "Do 20 ofert",
+      "listings50": "Do 50 ofert",
+      "listings100": "Do 100 ofert",
+      "globalAudience": "Globalna publiczność w 35 krajach",
+      "additionalPortals": "80+ dodatkowych portali",
+      "crmIntegration": "Integracja CRM",
+      "advancedCRM": "Zaawansowana integracja CRM",
+      "fullCRM": "Pełna integracja CRM",
+      "basicSupport": "Podstawowe wsparcie",
+      "prioritySupport": "Priorytetowe wsparcie",
+      "dedicatedManager": "Dedykowany menedżer konta",
+      "performanceAnalytics": "Analityka wydajności",
+      "advancedAnalytics": "Zaawansowana analityka",
+      "customBranding": "Niestandardowy branding"
+    },
+    "enterprise": {
+      "title": "Potrzebujesz większego wolumenu?",
+      "description": "Stwórzmy plan, który będzie unikalnie Twój. Niestandardowe rozwiązania dla deweloperów i dużych agencji.",
+      "contact": "Skontaktuj się ze Sprzedażą",
+      "volume": {
+        "title": "Duży Wolumen",
+        "description": "Niestandardowe ceny dla dużych portfolio"
+      },
+      "developers": {
+        "title": "Deweloperzy",
+        "description": "Specjalistyczne narzędzia dla projektów deweloperskich"
+      }
+    },
+    "benefits": {
+      "title": "Dlaczego Properly?",
+      "description": "Doświadcz zalet naszej globalnej platformy luksusowych nieruchomości",
+      "global": {
+        "title": "Globalna Sieć",
+        "description": "Dotrzej do kupujących na ponad 80 portalach nieruchomości na całym świecie"
+      },
+      "analytics": {
+        "title": "Zaawansowana Analityka",
+        "description": "Śledź wydajność i optymalizuj swoje oferty"
+      },
+      "network": {
+        "title": "Elitarna Sieć",
+        "description": "Połącz się z premium agentami i kupującymi"
+      },
+      "ai": {
+        "title": "Napędzane AI",
+        "description": "Wykorzystaj sztuczną inteligencję dla lepszych rezultatów"
+      }
+    },
+    "stats": {
+      "professionals": "Profesjonaliści Nieruchomości",
+      "buyers": "Potencjalni Kupujący",
+      "portals": "Portale Nieruchomości",
+      "countries": "Kraje"
+    },
+    "faq": {
+      "title": "Często Zadawane Pytania",
+      "question1": "Jak działa globalna dystrybucja?",
+      "answer1": "Twoje oferty są automatycznie dystrybuowane do naszej sieci ponad 80 premium portali nieruchomości w ponad 35 krajach.",
+      "question2": "Czy mogę anulować subskrypcję w każdej chwili?",
+      "answer2": "Tak, możesz anulować subskrypcję w każdej chwili. Wszystkie plany są miesięczne bez długoterminowych zobowiązań.",
+      "question3": "Jakiego rodzaju wsparcie zapewniacie?",
+      "answer3": "Oferujemy kompleksowe wsparcie, w tym dedykowanych menedżerów kont dla planów wyższego poziomu i 24/7 obsługę klienta.",
+      "question4": "Czy oferujecie niestandardowe rozwiązania?",
+      "answer4": "Tak, zapewniamy niestandardowe rozwiązania enterprise dla dużych agencji i deweloperów o specyficznych wymaganiach."
+    },
+    "cta": {
+      "title": "Gotowy na dotarcie do globalnych kupujących?",
+      "description": "Dołącz do tysięcy profesjonalistów, którzy ufają Properly w marketingu swoich luksusowych nieruchomości na całym świecie.",
+      "start": "Rozpocznij Darmowy Trial",
+      "contact": "Skontaktuj się ze Sprzedażą"
+    }
+  },
+  "blog": {
+    "title": "Rynkowe",
+    "insights": "Analizy",
+    "description": "Bądź na bieżąco z najnowszymi trendami i eksperckimi analizami w międzynarodowych nieruchomościach",
+    "searchPlaceholder": "Szukaj artykułów...",
+    "allCategories": "Wszystkie Kategorie",
+    "featured": "Polecane",
+    "latestPosts": "Najnowsze Artykuły",
+    "searchResults": "Wyniki Wyszukiwania",
+    "articles": "artykuły",
+    "noResults": "Nie znaleziono artykułów",
+    "noResultsDescription": "Spróbuj dostosować słowa kluczowe",
+    "newsletter": {
+      "title": "Bądź na Bieżąco",
+      "description": "Otrzymuj najnowsze analizy rynku i trendy nieruchomości bezpośrednio do swojej skrzynki pocztowej",
+      "emailPlaceholder": "Wprowadź swój email",
+      "subscribe": "Subskrybuj"
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "us": "z Nami",
+    "description": "Skontaktuj się z naszym zespołem ekspertów od luksusowych nieruchomości. Jesteśmy tutaj, aby pomóc Ci we wszystkich potrzebach dotyczących nieruchomości.",
+    "getInTouch": "Skontaktuj się z Nami",
+    "name": "Imię",
+    "email": "Email",
+    "phone": "Telefon",
+    "subject": "Temat",
+    "message": "Wiadomość",
+    "inquiryType": "Typ Zapytania",
+    "namePlaceholder": "Wprowadź swoje pełne imię",
+    "emailPlaceholder": "Wprowadź swój adres email",
+    "phonePlaceholder": "Wprowadź swój numer telefonu",
+    "subjectPlaceholder": "Wprowadź temat wiadomości",
+    "messagePlaceholder": "Wprowadź swoją wiadomość tutaj",
+    "selectInquiry": "Wybierz typ zapytania",
+    "sendMessage": "Wyślij Wiadomość",
+    "messageSent": "Wiadomość wysłana",
+    "messageSuccess": "Twoja wiadomość została wysłana pomyślnie",
+    "messageError": "Nie udało się wysłać wiadomości",
+    "fillRequired": "Wypełnij wszystkie wymagane pola",
+    "contactInfo": "Informacje Kontaktowe",
+    "emailDescription": "Wyślij nam email w każdej chwili",
+    "phoneDescription": "Zadzwoń do nas w godzinach pracy",
+    "addressDescription": "Odwiedź nasze biuro",
+    "hoursDescription": "Poniedziałek do Piątek",
+    "addressValue": "ul. Luksusowa 123, Dzielnica Premium, Warszawa, 00-001",
+    "hoursValue": "9:00 - 18:00",
+    "urgentInquiry": "Pilne Zapytanie?",
+    "urgentDescription": "W pilnych sprawach zadzwoń bezpośrednio",
+    "callNow": "Zadzwoń Teraz",
+    "findUs": "Znajdź Nas",
+    "mapPlaceholder": "Tutaj zostanie wyświetlona interaktywna mapa",
+    "inquiryTypes": {
+      "general": "Zapytanie Ogólne",
+      "agent": "Usługi Agencji",
+      "developer": "Usługi Dewelopera",
+      "support": "Wsparcie Techniczne",
+      "partnership": "Partnerstwo",
+      "media": "Media i Prasa"
+    },
+    "departments": {
+      "title": "Działy",
+      "description": "Skontaktuj się z właściwym działem dla szybszej pomocy",
+      "sales": {
+        "title": "Sprzedaż",
+        "description": "Oferty nieruchomości i usługi agencji"
+      },
+      "support": {
+        "title": "Wsparcie",
+        "description": "Wsparcie techniczne i pomoc z kontem"
+      },
+      "partnerships": {
+        "title": "Partnerstwa",
+        "description": "Partnerstwa biznesowe i integracje"
+      },
+      "international": {
+        "title": "Międzynarodowy",
+        "description": "Globalna ekspansja i rynki"
+      }
+    }
+  },
+  "about": {
+    "title": "O",
+    "properly": "Properly",
+    "subtitle": "Najbardziej zaufana platforma luksusowych nieruchomości na świecie, łącząca wymagających kupujących z premium nieruchomościami w ponad 35 krajach.",
+    "stats": {
+      "professionals": "Profesjonaliści Nieruchomości",
+      "buyers": "Potencjalni Kupujący",
+      "countries": "Kraje",
+      "portals": "Portale Nieruchomości"
+    },
+    "mission": {
+      "title": "Nasza Misja",
+      "description": "Demokratyzować dostęp do luksusowych nieruchomości poprzez łączenie kupujących, sprzedających i agentów za pomocą najnowocześniejszej technologii i niezrównanej doskonałości usług."
+    },
+    "vision": {
+      "title": "Nasza Wizja",
+      "description": "Stać się globalnym standardem dla transakcji luksusowych nieruchomości, czyniąc międzynarodowe nieruchomości dostępnymi, przejrzystymi i efektywnymi dla wszystkich."
+    },
+    "story": {
+      "title": "Nasza Historia",
+      "subtitle": "Od prostego pomysłu do wiodącej platformy luksusowych nieruchomości na świecie",
+      "paragraph1": "Założone w 2018 roku, Properly rozpoczęło z wizją rewolucjonizacji sposobu, w jaki luksusowe nieruchomości są reklamowane i odkrywane na całym świecie. Nasi założyciele zauważyli, że tradycyjny rynek nieruchomości był pofragmentowany, a kupujący i sprzedający mieli trudności z łączeniem się ponad granicami międzynarodowymi.",
+      "paragraph2": "To, co rozpoczęło się jako platforma łącząca europejskie luksusowe nieruchomości z międzynarodowymi kupującymi, przekształciło się w najbardziej kompleksową sieć luksusowych nieruchomości na świecie, obejmującą ponad 35 krajów i zawierającą ponad 10 000 premium nieruchomości.",
+      "paragraph3": "Dziś Properly obsługuje ponad 200 000 profesjonalistów nieruchomości i dociera do ponad 150 milionów potencjalnych kupujących na całym świecie, czyniąc nas zaufanym wyborem dla transakcji luksusowych nieruchomości globalnie."
+    },
+    "award": {
+      "title": "Lider Branży",
+      "year": "2024"
+    },
+    "values": {
+      "title": "Nasze Wartości",
+      "subtitle": "Zasady, które kierują wszystkim, co robimy",
+      "excellence": {
+        "title": "Doskonałość",
+        "description": "Dążymy do perfekcji w każdym aspekcie naszej usługi, od technologii po doświadczenie klienta."
+      },
+      "transparency": {
+        "title": "Przejrzystość",
+        "description": "Wierzymy w uczciwą, otwartą komunikację i jasne procesy dla wszystkich naszych interesariuszy."
+      },
+      "trust": {
+        "title": "Zaufanie",
+        "description": "Budowanie trwałych relacji poprzez niezawodność, bezpieczeństwo i konsekwentne dostarczanie."
+      },
+      "partnership": {
+        "title": "Partnerstwo",
+        "description": "Odnosimy sukces, gdy nasi klienci odnoszą sukces, tworząc wzajemnie korzystne długoterminowe partnerstwa."
+      }
+    },
+    "timeline": {
+      "title": "Nasza Podróż",
+      "subtitle": "Kluczowe kamienie milowe w ewolucji Properly"
+    },
+    "milestones": {
+      "2018": {
+        "title": "Założenie Firmy",
+        "description": "Properly startuje z fokusem na europejskie luksusowe nieruchomości"
+      },
+      "2019": {
+        "title": "Globalna Ekspansja",
+        "description": "Rozszerzenie usług na 15 krajów i ponad 1000 nieruchomości"
+      },
+      "2021": {
+        "title": "Innowacje Technologiczne",
+        "description": "Uruchomienie dopasowywania nieruchomości napędzanego AI i wirtualnych wycieczek"
+      },
+      "2023": {
+        "title": "Przywództwo Rynkowe",
+        "description": "Osiągnięcie 100 000+ profesjonalistów i 35+ krajów"
+      },
+      "2025": {
+        "title": "Wizja Przyszłości",
+        "description": "Ekspansja na 50+ krajów z ulepszonymi doświadczeniami AR/VR"
+      }
+    },
+    "team": {
+      "title": "Zespół Kierowniczy",
+      "subtitle": "Poznaj ekspertów napędzających globalny sukces Properly",
+      "ceo": {
+        "role": "Dyrektor Generalny",
+        "bio": "Były dyrektor nieruchomości z ponad 20-letnim doświadczeniem w międzynarodowych nieruchomościach"
+      },
+      "cto": {
+        "role": "Dyrektor Techniczny",
+        "bio": "Wizjoner technologiczny specjalizujący się w aplikacjach AI i uczenia maszynowego"
+      },
+      "coo": {
+        "role": "Dyrektor Operacyjny",
+        "bio": "Ekspert operacyjny z głęboką wiedzą w globalnej ekspansji biznesowej"
+      }
+    },
+    "cta": {
+      "title": "Dołącz do Rodziny Properly",
+      "description": "Niezależnie od tego, czy kupujesz, sprzedajesz, czy reklamujesz luksusowe nieruchomości, jesteśmy tutaj, aby podnieść Twoje doświadczenie w nieruchomościach.",
+      "contact": "Skontaktuj się z Nami",
+      "pricing": "Zobacz Cennik"
+    }
+  },
+  "network": {
+    "global": "Nasza Globalna",
+    "network": "Sieć",
+    "description": "Partneruj z wiodącymi portalami luksusowych nieruchomości na całym świecie, w tym Mansion Global i Wall Street Journal Real Estate",
+    "stats": {
+      "buyers": "Potencjalni Kupujący",
+      "portals": "Portale Nieruchomości",
+      "countries": "Kraje",
+      "languages": "Języki"
+    }
+  },
+  "footer": {
+    "description": "Wiodąca platforma luksusowych nieruchomości na świecie, łącząca wymagających kupujących z premium nieruchomościami w ponad 35 krajach.",
+    "quickLinks": "Szybkie Linki",
+    "propertiesForSale": "Nieruchomości na Sprzedaż",
+    "propertiesForRent": "Nieruchomości do Wynajęcia",
+    "findAgent": "Znajdź Agenta",
+    "marketInsights": "Analizy Rynku",
+    "investmentGuide": "Przewodnik Inwestycyjny",
+    "forProfessionals": "Dla Profesjonalistów",
+    "agentPlans": "Plany Agentów",
+    "developerSolutions": "Rozwiązania Deweloperskie",
+    "apiDocs": "Dokumentacja API",
+    "marketingTools": "Narzędzia Marketingowe",
+    "supportCenter": "Centrum Wsparcia",
+    "copyright": "© 2025 Properly. Wszystkie prawa zastrzeżone.",
+    "privacy": "Polityka Prywatności",
+    "terms": "Regulamin",
+    "cookies": "Polityka Cookies"
+  },
+  "pagination": {
+    "previous": "Poprzednia",
+    "next": "Następna"
+  },
+  "common": {
+    "error": "Błąd",
+    "success": "Sukces",
+    "loading": "Ładowanie",
+    "save": "Zapisz",
+    "cancel": "Anuluj",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "view": "Zobacz",
+    "back": "Wstecz",
+    "more": "więcej",
+    "sending": "Wysyłanie...",
+    "saving": "Zapisywanie...",
+    "creating": "Tworzenie...",
+    "all": "Wszystkie"
+  }
+}

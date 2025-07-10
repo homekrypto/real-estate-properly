@@ -1,0 +1,37 @@
+The Super Prompt: Final, Comprehensive Translation and Localization Mandate
+Objective:
+This is the final and complete implementation mandate for the internationalization (i18n) and localization (L10n) of the www.real-estate-properly.com application. The previous work established the technical foundation (i18next, Intl API), but my audit shows that the actual translation coverage is below 5%. The current objective is to achieve 100% translation coverage for all user-visible text across all 7 supported languages and ensure all data is correctly formatted for each locale.
+Mandatory Execution Plan:
+You are to execute the following three steps sequentially and completely. Do not report completion until all steps are fully finished.
+Step 1: The Great Key Migration - Eradicate All Hardcoded Text
+Your primary task is to systematically scan the entire client/src/ directory and eliminate every single piece of hardcoded English text that a user might see.
+Scan Every File: Go through every single .tsx file within client/src/pages/, client/src/components/, and any other relevant directories.
+Identify All Strings: Find every user-facing string, including but not limited to:
+Page titles (<h1>, <h2>, etc.)
+Button text ("Search", "Login", "Save to Favorites", "Request a Tour")
+Form labels ("Email Address", "Password")
+Form placeholders ("Enter a city...")
+Table headers ("Price", "Bedrooms")
+Paragraphs and descriptive text
+Modal/dialog text ("Are you sure?", "Success!", "Error")
+Toast/Notification messages ("Property saved!")
+"Loading..." and "No results found" states.
+Replace with t() function: Replace every identified string with a t('key.name') function call. Use a logical and hierarchical key naming convention (e.g., pricing.global50.title, propertyDetail.buttons.requestTour).
+Step 2: Full Language File Population - No File Left Behind
+With all keys implemented in the code, you must now populate the translation files completely.
+Target All 7 Languages: This task applies to en.json, es.json, de.json, fr.json, it.json, pt.json, and pl.json.
+100% Key Coverage: Every single key that exists in the en.json file must also exist and have a high-quality translation in the other 6 language files. It is not acceptable to leave keys untranslated in any language file.
+Verify Completeness: After populating, run a self-audit to confirm that there are no missing keys in the es, de, fr, it, pt, and pl files compared to the master en file.
+Step 3: Verification of Advanced Localization
+Finally, verify that the advanced formatting is applied correctly in conjunction with the newly translated text.
+Currency: For any page displaying a price, confirm the label is translated and the currency is formatted correctly.
+Example (German): The output must be Preis: 1.250.000 €. Not Price: 1.250.000 €.
+Example (Polish): The output must be Cena: 1 250 000 zł.
+Dates: For any displayed date (e.g., "Listed on..."), confirm the label is translated and the date format matches the locale.
+Example (US/English): Listed on: 07/15/2025
+Example (Italian): Pubblicato il: 15/07/2025
+Area: Confirm the area unit label changes with the locale.
+Example (US/English): Area: 2,500 sq ft
+Example (French): Surface: 232 m²
+Final Command:
+Execute this entire plan now. This is a corrective action to achieve the originally stated goal. Upon completion, I will be testing the application thoroughly in German, Polish, and French. I expect a fully immersive experience with absolutely no English text visible on any page, except for proper nouns or user-generated data (like agent names).

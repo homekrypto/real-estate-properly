@@ -1,0 +1,58 @@
+Your task is to transform the static www.real-estate-properly.com shell into a fully functional website. Use the architectural list below, derived from the Properstar sitemap analysis, as your definitive blueprint. You will audit the current site against this list, create all missing pages and functionality, and integrate all pages with live, internal links.
+Architectural Blueprint & Audit Checklist
+First, for each item in this list, report its current status: Functional, Exists (Static), or Missing.
+1. Core Platform Pages
+https://www.real-estate-properly.com/ (Homepage)
+https://www.real-estate-properly.com/contact (Contact Us)
+https://www.real-estate-properly.com/about-us (About Us / Meet The Team)
+https://www.real-estate-properly.com/pricing (Agency Pricing Page)
+2. User-Centric Features (Login Required)
+/login & /signup (Authentication Forms/Modals)
+/dashboard/favorites (User Favorites Page)
+/dashboard/messages (User Messages Page)
+3. Search & Browse Structure (The Core Engine)
+Template for: /{country}/{buy|rent}/{property-type-group} (e.g., /italy/buy/apartment-house)
+Template for: /{country}/{region-or-city}/{buy|rent}/{property-type-group} (e.g., /italy/tuscany/buy/apartment-house)
+Template for: Individual Listing Page (/listing/{id})
+4. Content & Tools
+/blog (Main Blog Hub / Guides Hub)
+Template for: Individual Blog Post (/blog/{post-slug})
+Template for: /market-trends/{country} (Price Trend Tool)
+5. Agent-Related Structure
+Template for: /agents/{country} (Agent Directory)
+Template for: /agent/{agent-slug} (Public Agent Profile Page)
+6. Static Legal Pages
+https://www.real-estate-properly.com/terms
+https://www.real-estate-properly.com/privacy
+https://www.real-estate-properly.com/cookie-policy
+Prioritized Build-Out and Integration Plan
+After the audit, execute the following development phases sequentially. For each phase, create the content and functionality, then activate all relevant links on existing pages to point to the newly functional sections.
+Phase I: Foundational Pages (Static Content & Contact)
+Build: Create any Missing pages from sections 1 (Core Platform) and 6 (Legal Pages) of the checklist.
+Content: Populate all these pages with relevant, professional placeholder text.
+Functionality: On the /contact page, implement a working contact form that validates input and shows a success message.
+Integrate: Activate all links in the website's footer (About Us, Contact, Terms, Privacy, etc.) to point to these new pages. Ensure the main logo in the header correctly links to the homepage.
+Phase II: User Authentication & Subscription (The Business Core)
+Build: Create the Login, Sign Up, and Pricing pages/modals. Create the user dashboard templates for /dashboard/favorites and /dashboard/messages.
+Functionality:
+Implement a user database (for both Seekers and Agents).
+Implement full Sign Up and Login functionality.
+On the /pricing page, make the plan selection buttons lead to a (simulated) payment/subscription checkout flow for agents.
+Integrate: Activate the Login and Sign Up buttons in the header. After a user logs in, these should change to a "Dashboard" and "Logout" link.
+Phase III: Search Engine & Listings (The Main Product)
+Build: Create the single, powerful, dynamic template that will render the search results for all URL patterns in section 3 of the checklist. Build the template for the individual listing page.
+Functionality:
+Create a sample database of 20+ properties across multiple countries, cities, and types. Include prices, photos, and key details.
+Program the back-end to read the URL (e.g., /spain/andalusia/buy) and filter the database to show only the correct listings.
+On the individual listing page, display all details for one property. Add a "Save to Favorites" button that works for logged-in users.
+Integrate:
+Make the main search bar on the homepage fully functional. A search for "Tuscany" should redirect the user to /italy/tuscany/buy, displaying the results.
+Activate the Buy and Rent links in the header to point to their respective top-level search pages.
+Ensure clicking a property card on the results page takes the user to its correct individual listing page.
+Phase IV: Content and Agent Directory (Engagement & SEO)
+Build: Create the /blog hub page and the /agents directory page template.
+Functionality:
+Populate the /blog page with 5-6 sample article titles and excerpts. Clicking a title should lead to a simple article page.
+Populate the /agents page by pulling all users marked as "Agents" from the database and displaying them in a list.
+Integrate: Activate the Blog and Agents links in the main navigation header.
+Upon completion, the website should have no dead links. Every navigational element should lead to a page with at least basic placeholder content and the specified core functionality.
