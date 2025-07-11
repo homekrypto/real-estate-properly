@@ -1,0 +1,22 @@
+{
+  "digestDate": "2025-07-18",
+  "posts": [
+    {
+      "id": "1",
+      "title": "How to Buy Property in 2025",
+      "summary": "A step-by-step guide for buyers in the new real estate market.",
+      "date": "2025-07-11",
+      "category": "buying-guides",
+      "authorId": "admin"
+    },
+    {
+      "id": "2",
+      "title": "Market Trends for Summer 2025",
+      "summary": "Latest updates and analysis on real estate markets worldwide.",
+      "date": "2025-07-13",
+      "category": "market-trends",
+      "authorId": "admin"
+    }
+  ],
+  "recipients": ["user1@example.com", "user2@example.com"]
+}

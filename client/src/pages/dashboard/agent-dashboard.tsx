@@ -41,6 +41,7 @@ export default function AgentDashboard() {
   const { isAuthenticated, isLoading, user } = useAuth();
   const queryClient = useQueryClient();
   const [isAddPropertyOpen, setIsAddPropertyOpen] = useState(false);
+  const [isEditProfileOpen, setIsEditProfileOpen] = useState(false);
 
   // Redirect to login if not authenticated
   useEffect(() => {
@@ -207,23 +208,47 @@ export default function AgentDashboard() {
       <Layout>
       
       <div className="pt-20">
+        <div className="flex justify-end container mx-auto px-4 lg:px-8 py-2">
+          <Button
+            variant="outline"
+            onClick={() => {
+              // TODO: Replace with real logout logic (clear session/token)
+              toast({ title: "Logged out", description: "Logout was successful." });
+              setTimeout(() => {
+                window.location.href = "/login";
+              }, 1000);
+            }}
+          >
+            Log Out
+          </Button>
+        </div>
         <div className="container mx-auto px-4 lg:px-8 py-8">
           {/* Welcome Header */}
           <div className="flex justify-between items-center mb-8">
-            <div>
-              <h1 className="font-luxury text-4xl font-bold text-gray-900 dark:text-white mb-2">
-                Agent Dashboard
-              </h1>
-              <p className="text-gray-600 dark:text-gray-300">
-                Manage your listings, track performance, and connect with clients
-              </p>
-            </div>
-            <Dialog open={isAddPropertyOpen} onOpenChange={setIsAddPropertyOpen}>
-              <DialogTrigger asChild>
-                <Button className="bg-gradient-to-r from-forest-600 to-forest-700 hover:from-forest-700 hover:to-forest-800 text-white">
-                  <Plus className="mr-2 h-4 w-4" />
-                  Add Property
-                </Button>
+                        <form
+                          onSubmit={async (e) => {
+                            e.preventDefault();
+                            const formData = new FormData(e.target as HTMLFormElement);
+                            const updatedProfile = {
+                              companyName: formData.get("companyName"),
+                              licenseNumber: formData.get("licenseNumber"),
+                            };
+                            try {
+                              const res = await fetch("/api/agents/profile/update", {
+                                method: "POST",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify(updatedProfile),
+                              });
+                              if (!res.ok) throw new Error("Failed to update profile");
+                              toast({ title: "Profile Updated", description: "Your agent profile has been updated." });
+                              setIsEditProfileOpen(false);
+                              queryClient.invalidateQueries({ queryKey: ["/api/agents/profile/me"] });
+                            } catch (err) {
+                              toast({ title: "Error", description: "Could not update profile.", variant: "destructive" });
+                            }
+                          }}
+                          className="space-y-4"
+                        >
               </DialogTrigger>
               <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
@@ -757,9 +782,50 @@ export default function AgentDashboard() {
                         </Badge>
                       </div>
                     </div>
-                    <Button variant="outline" className="w-full">
-                      Update Profile
-                    </Button>
+                    <Dialog open={isEditProfileOpen} onOpenChange={setIsEditProfileOpen}>
+                      <DialogTrigger asChild>
+                        <Button variant="outline" className="w-full">
+                          Update Profile
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-lg">
+                        <DialogHeader>
+                          <DialogTitle>Edit Agent Profile</DialogTitle>
+                        </DialogHeader>
+                        <form
+                          onSubmit={async (e) => {
+                            e.preventDefault();
+                            const formData = new FormData(e.target as HTMLFormElement);
+                            const updatedProfile = {
+                              companyName: formData.get("companyName"),
+                              licenseNumber: formData.get("licenseNumber"),
+                              isVerified: formData.get("isVerified") === "true",
+                            };
+                            // TODO: Replace with real API call
+                            toast({ title: "Profile Updated", description: "Your agent profile has been updated." });
+                            setIsEditProfileOpen(false);
+                          }}
+                          className="space-y-4"
+                        >
+                          <div>
+                            <Label htmlFor="companyName">Company Name</Label>
+                            <Input id="companyName" name="companyName" defaultValue={agentProfile?.companyName || ""} />
+                          </div>
+                          <div>
+                            <Label htmlFor="licenseNumber">License Number</Label>
+                            <Input id="licenseNumber" name="licenseNumber" defaultValue={agentProfile?.licenseNumber || ""} />
+                          </div>
+                          <div className="flex justify-end space-x-2 pt-4">
+                            <Button type="button" variant="outline" onClick={() => setIsEditProfileOpen(false)}>
+                              Cancel
+                            </Button>
+                            <Button type="submit" className="bg-gradient-to-r from-forest-600 to-forest-700 text-white">
+                              Save Changes
+                            </Button>
+                          </div>
+                        </form>
+                      </DialogContent>
+                    </Dialog>
                   </CardContent>
                 </Card>
 

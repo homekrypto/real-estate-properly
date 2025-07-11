@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 // import { setupAuth, isAuthenticated } from "./replitAuth"; // Disabled Replit Auth
 import { insertSavedPropertySchema, insertMessageSchema } from "@shared/schema";
+import blogRouter from './routes/blog';
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Auth middleware disabled - using custom auth instead
@@ -11,15 +12,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Auth routes - Custom auth system
   app.get('/api/auth/user', async (req: any, res) => {
     try {
-      // For now, return a demo user - in production you'd check session/token
-      const user = {
-        id: "demo_user",
-        email: "demo@example.com",
-        firstName: "Demo",
-        lastName: "User",
-        role: "seeker",
-        status: "verified"
-      };
+      // TODO: Replace with real session/token logic
+      // For now, get agent1 and override status/subscription for testing
+      let user = await storage.getUser('agent1');
+      if (!user) {
+        return res.status(401).json({ error: 'User not found' });
+      }
+      user.status = 'verified';
+      user.subscriptionStatus = 'active';
       res.json(user);
     } catch (error) {
       console.error("Error fetching user:", error);
@@ -285,6 +285,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       // Get user from database
       const user = await storage.getUserByEmail(email);
+      console.log('[DEBUG] User object from DB:', user);
       if (!user) {
         return res.status(401).json({ error: "Invalid credentials" });
       }
@@ -303,12 +304,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
       let redirectUrl = "/";
       if (user.role === "agent") {
         // Check if agent has active subscription
-        const hasActiveSubscription = false; // This would check the database
+        // Drizzle ORM returns camelCase: subscriptionStatus
+        const hasActiveSubscription = user.subscriptionStatus === "active";
         if (!hasActiveSubscription) {
           console.log(`[INFO] Agent '${email}' has no active subscription. Forcing redirect to /pricing.`);
           redirectUrl = "/pricing";
         } else {
-          redirectUrl = "/agent-dashboard";
+          redirectUrl = "/dashboard/agent";
         }
       }
       
@@ -344,15 +346,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get('/api/blog', async (req, res) => {
-    try {
-      const posts = await storage.getBlogPosts();
-      res.json(posts);
-    } catch (error) {
-      console.error('Error fetching blog posts:', error);
-      res.status(500).json({ error: 'Failed to fetch blog posts' });
-    }
-  });
+  // Blog API routes
+  app.use('/api/blog', blogRouter);
 
   // Countries
   app.get("/api/countries", async (req, res) => {

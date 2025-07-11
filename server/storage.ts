@@ -1,3 +1,49 @@
+// Force verify all agents utility
+export async function forceVerifyAllAgents() {
+  const { users } = await import('../shared/schema');
+  const { eq } = await import('drizzle-orm');
+  // Get all agents
+  const agents = await storage.db.select().from(users).where(eq(users.role, 'agent'));
+  for (const agent of agents) {
+    await storage.db.update(users).set({ status: 'verified' }).where(eq(users.id, agent.id));
+  }
+  return agents.length;
+}
+// Newsletter subscriber persistence (Drizzle ORM/PostgreSQL integration)
+// You must implement these with your DB/ORM
+
+/**
+ * Get a newsletter subscriber by email
+ * @param {string} email
+ * @returns {Promise<{email: string} | null>}
+ */
+export async function getNewsletterSubscriber(email: string): Promise<{email: string} | null> {
+  // TODO: Replace with Drizzle ORM/PostgreSQL query
+  // Example: return await db.select().from(newsletter).where(eq(newsletter.email, email)).then(rows => rows[0] || null);
+  return null;
+}
+
+/**
+ * Add a newsletter subscriber
+ * @param {string} email
+ * @returns {Promise<void>}
+ */
+export async function addNewsletterSubscriber(email: string): Promise<void> {
+  // TODO: Replace with Drizzle ORM/PostgreSQL insert
+  // Example: await db.insert(newsletter).values({ email });
+}
+
+/**
+ * Get all newsletter subscribers
+ * @returns {Promise<Array<{email: string}>>}
+ */
+export async function getAllNewsletterSubscribers(): Promise<Array<{email: string}>> {
+  // TODO: Replace with Drizzle ORM/PostgreSQL select
+  // Example: return await db.select().from(newsletter);
+  return [];
+}
+import { desc } from 'drizzle-orm/sql';
+import { comments, type Comment, type InsertComment } from "@shared/schema";
 import {
   users,
   countries,
@@ -100,10 +146,32 @@ export interface IStorage {
   // Blog posts
   getBlogPosts(): Promise<BlogPost[]>;
   getBlogPost(slug: string): Promise<BlogPost | undefined>;
+  createBlogPost(data: InsertBlogPost): Promise<BlogPost>;
 }
 
 class PgStorage implements IStorage {
-  private db;
+  // Blog comments
+  async getCommentsForPost(postId: string): Promise<Comment[]> {
+    // Only return approved comments
+    return await this.db.select().from(comments).where(and(eq(comments.postId, postId), eq(comments.status, 'approved')));
+  }
+  async addCommentToPost(data: InsertComment): Promise<Comment> {
+    await this.db.insert(comments).values({ ...data });
+    // Return the most recent comment for this post
+    const [last] = await this.db.select().from(comments).where(eq(comments.postId, data.postId)).orderBy(desc(comments.date)).limit(1);
+    return last;
+  }
+  async deleteComment(postId: string, commentId: string): Promise<void> {
+    await this.db.delete(comments).where(and(eq(comments.postId, postId), eq(comments.id, commentId)));
+  }
+  async approveComment(postId: string, commentId: string): Promise<void> {
+    await this.db.update(comments).set({ status: 'approved' }).where(and(eq(comments.postId, postId), eq(comments.id, commentId)));
+  }
+  async getPendingComments(): Promise<Comment[]> {
+    // Get all comments with status 'pending'
+    return await this.db.select().from(comments).where(eq(comments.status, 'pending'));
+  }
+  public db;
   constructor() {
     console.log('[DEBUG] PgStorage: Initializing database connection...');
     const pool = new Pool({ connectionString: process.env.DATABASE_URL });
@@ -175,7 +243,7 @@ class PgStorage implements IStorage {
   async createPropertyInquiry(data: InsertPropertyInquiry): Promise<PropertyInquiry> {
     await this.db.insert(propertyInquiries).values({ ...data });
     // Assuming id is auto-incremented and returned
-    const [last] = await this.db.select().from(propertyInquiries).orderBy(propertyInquiries.id.desc()).limit(1);
+    const [last] = await this.db.select().from(propertyInquiries).orderBy(desc(propertyInquiries.id)).limit(1);
     return last;
   }
   async getPropertyInquiries(agentId: string): Promise<PropertyInquiry[]> {
@@ -209,7 +277,7 @@ class PgStorage implements IStorage {
   }
   async createProperty(property: InsertProperty): Promise<Property> {
     await this.db.insert(properties).values({ ...property });
-    const [last] = await this.db.select().from(properties).orderBy(properties.id.desc()).limit(1);
+    const [last] = await this.db.select().from(properties).orderBy(desc(properties.id)).limit(1);
     return last;
   }
   async updateProperty(id: number, property: Partial<InsertProperty>): Promise<Property> {
@@ -237,7 +305,7 @@ class PgStorage implements IStorage {
   }
   async saveProperty(data: InsertSavedProperty): Promise<SavedProperty> {
     await this.db.insert(savedProperties).values({ ...data });
-    const [last] = await this.db.select().from(savedProperties).orderBy(savedProperties.id.desc()).limit(1);
+    const [last] = await this.db.select().from(savedProperties).orderBy(desc(savedProperties.id)).limit(1);
     return last;
   }
   async unsaveProperty(userId: string, propertyId: number): Promise<void> {
@@ -245,11 +313,11 @@ class PgStorage implements IStorage {
   }
   // Messages
   async getMessages(userId: string): Promise<Message[]> {
-    return await this.db.select().from(messages).where(eq(messages.userId, userId));
+    return await this.db.select().from(messages).where(eq(messages.toUserId, userId));
   }
   async createMessage(message: InsertMessage): Promise<Message> {
     await this.db.insert(messages).values({ ...message });
-    const [last] = await this.db.select().from(messages).orderBy(messages.id.desc()).limit(1);
+    const [last] = await this.db.select().from(messages).orderBy(desc(messages.id)).limit(1);
     return last;
   }
   async markMessageAsRead(id: number): Promise<void> {
@@ -257,10 +325,34 @@ class PgStorage implements IStorage {
   }
   // Blog posts
   async getBlogPosts(): Promise<BlogPost[]> {
-    return await this.db.select().from(blogPosts);
+    // Explicitly select all columns to ensure 'featured' is present
+    return await this.db.select({
+      id: blogPosts.id,
+      title: blogPosts.title,
+      slug: blogPosts.slug,
+      excerpt: blogPosts.excerpt,
+      content: blogPosts.content,
+      category: blogPosts.category,
+      authorId: blogPosts.authorId,
+      featuredImage: blogPosts.featuredImage,
+      isPublished: blogPosts.isPublished,
+      featured: blogPosts.featured,
+      createdAt: blogPosts.createdAt,
+      updatedAt: blogPosts.updatedAt,
+    }).from(blogPosts);
   }
   async getBlogPost(slug: string): Promise<BlogPost | undefined> {
     return await this.db.query.blogPosts.findFirst({ where: eq(blogPosts.slug, slug) }) ?? undefined;
+  }
+  async createBlogPost(data: InsertBlogPost): Promise<BlogPost> {
+    try {
+      await this.db.insert(blogPosts).values({ ...data });
+      const [last] = await this.db.select().from(blogPosts).orderBy(desc(blogPosts.id)).limit(1);
+      return last;
+    } catch (err) {
+      console.error('[STORAGE createBlogPost ERROR]', err);
+      throw err;
+    }
   }
 }
 

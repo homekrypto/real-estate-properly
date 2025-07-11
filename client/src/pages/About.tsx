@@ -314,6 +314,27 @@ export default function About() {
           </div>
         </div>
 
+        {/* Contact Section */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="font-luxury text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+              {t('about.contact.title')}
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              {t('about.contact.subtitle')}
+            </p>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-xl p-8 luxury-shadow border border-border">
+            <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
+            <p className="mb-2 text-gray-600 dark:text-gray-400">Have questions or feedback? Reach out to our team:</p>
+            <ul className="mb-6 list-disc pl-6 text-gray-600 dark:text-gray-400">
+              <li>Email: <a href="mailto:support@properly.com" className="text-blue-600 dark:text-blue-400 underline">support@properly.com</a></li>
+              <li>Phone: <a href="tel:+1234567890" className="text-blue-600 dark:text-blue-400 underline">+1 234 567 890</a></li>
+            </ul>
+          </div>
+        </div>
+
         {/* CTA Section */}
         <div className="text-center">
           <Card className="luxury-shadow bg-gradient-to-r from-forest-600 to-forest-700 border-0">

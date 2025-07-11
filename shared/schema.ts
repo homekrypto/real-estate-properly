@@ -1,3 +1,16 @@
+export type Comment = typeof comments.$inferSelect;
+export type InsertComment = typeof comments.$inferInsert;
+// Comments table for blog post comments
+// ...existing code...
+
+export const comments = pgTable('comments', {
+  id: varchar('id', { length: 32 }).primaryKey(),
+  postId: varchar('post_id', { length: 32 }).notNull(),
+  name: varchar('name', { length: 128 }).notNull(),
+  text: text('text').notNull(),
+  date: timestamp('date').notNull(),
+  status: varchar('status', { length: 16 }).notNull(), // 'pending' | 'approved'
+});
 import {
   pgTable,
   text,
@@ -189,6 +202,7 @@ export const blogPosts = pgTable("blog_posts", {
   authorId: varchar("author_id").notNull(),
   featuredImage: varchar("featured_image").notNull(),
   isPublished: boolean("is_published").default(false),
+  featured: boolean("featured").default(false),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
 });

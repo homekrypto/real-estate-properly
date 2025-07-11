@@ -135,7 +135,7 @@ export function Layout({ children }: LayoutProps) {
       </main>
 
       {/* Footer - Unified with homepage */}
-      <footer className="bg-gray-900 dark:bg-black text-white py-16">
+      <footer className="bg-white dark:bg-black text-gray-900 dark:text-white py-16 border-t border-gray-200 dark:border-gray-800">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-4 gap-8 mb-12">
             {/* Company Info */}
@@ -146,7 +146,7 @@ export function Layout({ children }: LayoutProps) {
                 </div>
                 <span className="font-luxury text-3xl font-bold text-white">Properly</span>
               </div>
-              <p className="text-gray-400 leading-relaxed max-w-lg">
+              <p className="text-black dark:text-gray-400 leading-relaxed max-w-lg">
                 {t('footer.description')}
               </p>
               <div className="flex space-x-4">
@@ -172,13 +172,12 @@ export function Layout({ children }: LayoutProps) {
                   { name: t('footer.propertiesForRent'), href: '/rent' },
                   { name: t('footer.findAgent'), href: '/agents' },
                   { name: t('footer.marketInsights'), href: '/blog' },
-                  { name: t('footer.investmentGuide'), href: '/blog/investment' },
                   { name: t('footer.developerSolutions'), href: '/developer' },
                 ].map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-forest-400 transition-colors"
+                      className="text-black hover:text-forest-600 dark:text-gray-400 dark:hover:text-forest-400 transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -200,7 +199,7 @@ export function Layout({ children }: LayoutProps) {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-forest-400 transition-colors"
+                      className="text-black hover:text-forest-600 dark:text-gray-400 dark:hover:text-forest-400 transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -215,22 +214,22 @@ export function Layout({ children }: LayoutProps) {
             <div className="flex items-center space-x-3">
               <Mail className="h-5 w-5 text-forest-400" />
               <div>
-                <div className="text-sm text-gray-400">Email</div>
-                <div className="text-white">contact@properly.com</div>
+                <div className="text-sm text-black dark:text-gray-400">Email</div>
+                <div className="text-black dark:text-white">contact@properly.com</div>
               </div>
             </div>
             <div className="flex items-center space-x-3">
               <Phone className="h-5 w-5 text-forest-400" />
               <div>
-                <div className="text-sm text-gray-400">Phone</div>
-                <div className="text-white">+1 (555) 123-4567</div>
+                <div className="text-sm text-black dark:text-gray-400">Phone</div>
+                <div className="text-black dark:text-white">+1 (555) 123-4567</div>
               </div>
             </div>
             <div className="flex items-center space-x-3">
               <MapPin className="h-5 w-5 text-forest-400" />
               <div>
-                <div className="text-sm text-gray-400">Headquarters</div>
-                <div className="text-white">New York, NY</div>
+                <div className="text-sm text-black dark:text-gray-400">Headquarters</div>
+                <div className="text-black dark:text-white">New York, NY</div>
               </div>
             </div>
           </div>
@@ -257,20 +256,20 @@ export function Layout({ children }: LayoutProps) {
           {/* Bottom Footer */}
           <div className="border-t border-gray-800 pt-8">
             <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
-              <div className="text-gray-400 text-sm">
+              <div className="text-black dark:text-gray-400 text-sm">
                 © 2025 Properly. All rights reserved.
               </div>
               <div className="flex space-x-6 text-sm">
-                <Link href="/privacy" className="text-gray-400 hover:text-forest-400 transition-colors">
+               <Link href="/privacy" className="text-black hover:text-forest-600 dark:text-gray-400 dark:hover:text-forest-400 transition-colors">
                   Privacy Policy
                 </Link>
-                <Link href="/terms" className="text-gray-400 hover:text-forest-400 transition-colors">
+               <Link href="/terms" className="text-black hover:text-forest-600 dark:text-gray-400 dark:hover:text-forest-400 transition-colors">
                   Terms of Service
                 </Link>
-                <Link href="/cookies" className="text-gray-400 hover:text-forest-400 transition-colors">
+               <Link href="/cookies" className="text-black hover:text-forest-600 dark:text-gray-400 dark:hover:text-forest-400 transition-colors">
                   Cookie Policy
                 </Link>
-                <Link href="/legal" className="text-gray-400 hover:text-forest-400 transition-colors">
+               <Link href="/legal" className="text-black hover:text-forest-600 dark:text-gray-400 dark:hover:text-forest-400 transition-colors">
                   Legal
                 </Link>
               </div>

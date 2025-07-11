@@ -1,8 +1,12 @@
 import ForgotPassword from "@/pages/ForgotPassword";
+import AgentDashboard from "@/pages/dashboard/agent-dashboard";
 import Buy from "@/pages/buy";
 import Rent from "@/pages/rent";
 import AgentRegister from "@/pages/AgentRegister";
 import ResetPassword from "@/pages/ResetPassword";
+import PrivacyPolicyPage from "@/pages/privacy";
+import CookiePolicyPage from "@/pages/cookies";
+import LegalPage from "@/pages/legal";
 import { Switch, Route } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -54,6 +58,10 @@ function Router() {
         <Route path="/agentregister" component={AgentRegister} />
         <Route path="/forgot-password" component={ForgotPassword} />
         <Route path="/reset-password" component={ResetPassword} />
+        <Route path="/privacy" component={PrivacyPolicyPage} />
+        <Route path="/cookies" component={CookiePolicyPage} />
+        <Route path="/legal" component={LegalPage} />
+        <Route path="/dashboard/agent" component={AgentDashboard} />
         <Route>
           <h1 style={{color: 'blue', textAlign: 'center'}}>404 Page Not Found<br/>Did you forget to add the page to the router?</h1>
         </Route>
