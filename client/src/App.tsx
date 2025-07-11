@@ -1,3 +1,8 @@
+import ForgotPassword from "@/pages/ForgotPassword";
+import Buy from "@/pages/buy";
+import Rent from "@/pages/rent";
+import AgentRegister from "@/pages/AgentRegister";
+import ResetPassword from "@/pages/ResetPassword";
 import { Switch, Route } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -6,13 +11,13 @@ import { useAuth } from "@/hooks/useAuth";
 import { Suspense } from "react";
 
 import Landing from "@/pages/landing";
-import Home from "@/pages/home";
+import Home from "@/pages/Home";
 import Search from "@/pages/search";
 import SearchResults from "@/pages/search-results";
 import PropertyDetail from "@/pages/property-detail";
 import Agents from "@/pages/agents";
-import Pricing from "@/pages/pricing";
-import Blog from "@/pages/blog";
+import Pricing from "@/pages/Pricing";
+import Blog from "@/pages/Blog";
 import Developer from "@/pages/developer";
 import NotFound from "@/pages/not-found";
 import SignUpNew from "@/pages/SignUpNew";
@@ -31,7 +36,6 @@ const queryClient = new QueryClient({
 function Router() {
   return (
     <>
-      <h1 style={{color: 'red', textAlign: 'center'}}>Hello World - React is Rendering</h1>
       <Switch>
         <Route path="/" component={Landing} />
         <Route path="/search" component={Search} />
@@ -41,11 +45,18 @@ function Router() {
         <Route path="/pricing" component={Pricing} />
         <Route path="/blog" component={Blog} />
         <Route path="/developer" component={Developer} />
+        <Route path="/buy" component={Buy} />
+        <Route path="/rent" component={Rent} />
         <Route path="/signup" component={SignUpNew} />
         <Route path="/login" component={LoginNew} />
         <Route path="/verify-email" component={VerifyEmailNew} />
         <Route path="/agent-pricing" component={AgentPricing} />
-        <Route component={NotFound} />
+        <Route path="/agentregister" component={AgentRegister} />
+        <Route path="/forgot-password" component={ForgotPassword} />
+        <Route path="/reset-password" component={ResetPassword} />
+        <Route>
+          <h1 style={{color: 'blue', textAlign: 'center'}}>404 Page Not Found<br/>Did you forget to add the page to the router?</h1>
+        </Route>
       </Switch>
     </>
   );

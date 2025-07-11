@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Layout } from '@/components/Layout';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from '@tanstack/react-query';
 import { Calendar, User, Tag, Search, Filter, TrendingUp, BookOpen } from 'lucide-react';
@@ -53,11 +54,12 @@ export default function Blog() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto px-4 lg:px-8 py-8">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center space-x-3 mb-4">
+    <Layout>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-800">
+        <div className="container mx-auto px-4 lg:px-8 py-8">
+          {/* Hero Section */}
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center space-x-3 mb-4">
             <BookOpen className="h-8 w-8 text-forest-600 dark:text-forest-400" />
             <h1 className="font-luxury text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white">
               {t('blog.title')} <span className="text-forest-600 dark:text-forest-400">{t('blog.insights')}</span>
@@ -258,6 +260,7 @@ export default function Blog() {
           </Card>
         </div>
       </div>
-    </div>
+      </div>
+    </Layout>
   );
 }

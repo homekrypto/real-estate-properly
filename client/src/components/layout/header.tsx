@@ -173,18 +173,18 @@ export function Header() {
                   </div>
                 ) : (
                   <>
-                    <a
-                      href="/api/login"
-                      className="px-4 py-2 text-forest-600 dark:text-forest-400 hover:text-forest-700 dark:hover:text-forest-300 font-medium transition-colors"
+                    <Button
+                      onClick={() => window.location.href = '/login'}
+                      className="px-4 py-2 text-forest-600 dark:text-forest-400 hover:text-forest-700 dark:hover:text-forest-300 font-medium transition-colors bg-transparent border-none"
                     >
                       Login
-                    </a>
-                    <a
-                      href="/api/login"
+                    </Button>
+                    <Button
+                      onClick={() => window.location.href = '/signup'}
                       className="px-6 py-2 bg-gradient-to-r from-forest-600 to-forest-700 hover:from-forest-700 hover:to-forest-800 text-white rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-xl"
                     >
-                      Sign Up
-                    </a>
+                      Register
+                    </Button>
                   </>
                 )}
               </div>
@@ -225,18 +225,18 @@ export function Header() {
               
               {!isLoading && !isAuthenticated && (
                 <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <a
-                    href="/api/login"
-                    className="px-4 py-2 text-center text-forest-600 dark:text-forest-400 hover:text-forest-700 dark:hover:text-forest-300 font-medium transition-colors"
+                  <Button
+                    onClick={() => window.location.href = '/login'}
+                    className="px-4 py-2 text-center text-forest-600 dark:text-forest-400 hover:text-forest-700 dark:hover:text-forest-300 font-medium transition-colors bg-transparent border-none"
                   >
                     Login
-                  </a>
-                  <a
-                    href="/api/login"
+                  </Button>
+                  <Button
+                    onClick={() => window.location.href = '/signup'}
                     className="px-4 py-2 text-center bg-gradient-to-r from-forest-600 to-forest-700 hover:from-forest-700 hover:to-forest-800 text-white rounded-lg font-medium transition-all duration-200 shadow-lg"
                   >
-                    Sign Up
-                  </a>
+                    Register
+                  </Button>
                 </div>
               )}
             </div>

@@ -110,6 +110,9 @@ class PgStorage implements IStorage {
     this.db = drizzle(pool, { schema });
     console.log('[DEBUG] PgStorage: Database connection initialized.');
   }
+  async updateUserPassword(userId: string, newPassword: string): Promise<void> {
+    await this.db.update(users).set({ password: newPassword, updatedAt: new Date() }).where(eq(users.id, userId));
+  }
   // User operations
   async getUser(id: string): Promise<User | undefined> {
     return await this.db.query.users.findFirst({ where: eq(users.id, id) }) ?? undefined;

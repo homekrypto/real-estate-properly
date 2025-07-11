@@ -354,16 +354,16 @@
     "plans": {
       "title": "Plans",
       "global20": {
-        "name": "Global 20",
-        "description": "Perfect for independent agents"
+        "name": "Bronze",
+        "description": "Up to 20 listings for independent agents"
       },
       "global50": {
-        "name": "Global 50",
-        "description": "For growing agencies"
+        "name": "Silver",
+        "description": "Up to 50 listings for growing agencies"
       },
       "global100": {
-        "name": "Global 100",
-        "description": "For established agencies"
+        "name": "Gold",
+        "description": "Up to 100 listings for established agencies"
       }
     },
     "subtitle": "Join Properly now and reach a global audience of qualified buyers worldwide",

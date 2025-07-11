@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+import { Layout } from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -22,7 +21,7 @@ export default function Agents() {
   
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <Header />
+      <Layout>
       
       <div className="pt-20">
         {/* Hero Section */}
@@ -239,7 +238,8 @@ export default function Agents() {
         </section>
       </div>
 
-      <Footer />
+      {/* Footer is included in Layout */}
+      </Layout>
     </div>
   );
 }

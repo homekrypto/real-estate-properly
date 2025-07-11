@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -179,7 +178,7 @@ export default function SearchResults() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <Header />
+      <Layout>
       
       <div className="pt-20">
         <div className="container mx-auto px-4 lg:px-8 py-8">
@@ -455,7 +454,8 @@ export default function SearchResults() {
         </div>
       </div>
 
-      <Footer />
+      {/* Footer is included in Layout */}
+      </Layout>
     </div>
   );
 }

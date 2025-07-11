@@ -31,55 +31,56 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/auth/register", async (req, res) => {
     try {
       const userData = req.body;
-      
-      console.log(`[DEBUG] Attempting to create user: ${userData.email}`);
-      
+      console.log(`[DEBUG] Attempting to create user:`, userData);
       // Validate required fields
       if (!userData.firstName || !userData.lastName || !userData.email || !userData.password) {
+        console.error(`[ERROR] Missing required fields:`, userData);
         return res.status(400).json({ error: "Missing required fields" });
       }
-      
       // Check if user already exists
       const existingUser = await storage.getUserByEmail(userData.email);
       if (existingUser) {
+        console.error(`[ERROR] User with this email already exists:`, userData.email);
         return res.status(400).json({ error: "User with this email already exists" });
       }
-      
       // Create user in database
-      const user = await storage.upsertUser({
-        id: `user_${Date.now()}`,
-        email: userData.email,
-        firstName: userData.firstName,
-        lastName: userData.lastName,
-        role: userData.role || "seeker",
-        status: "unverified",
-        agencyName: userData.agencyName,
-        phone: userData.phone,
-        profileImageUrl: null
-      });
-      
-      console.log(`[SUCCESS] User '${userData.email}' created in database. Role: '${user.role}', Status: '${user.status}'.`);
-      
-      // Generate verification token
-      const verificationToken = `token_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-      await storage.createVerificationToken({
-        token: verificationToken,
-        userId: user.id,
-        type: "email_verification",
-        expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000) // 24 hours
-      });
-      
-      console.log(`[INFO] Verification email simulation triggered for ${userData.email}`);
-      
-      res.json({ 
-        success: true, 
-        user,
-        message: "Registration successful. Please check your email to verify your account.",
-        verificationToken // For testing purposes
-      });
+      try {
+        const user = await storage.upsertUser({
+          id: `user_${Date.now()}`,
+          email: userData.email,
+          firstName: userData.firstName,
+          lastName: userData.lastName,
+          role: userData.role || "seeker",
+          status: "unverified",
+          agencyName: userData.agencyName,
+          phone: userData.phone,
+          profileImageUrl: null
+        });
+        console.log(`[SUCCESS] User '${userData.email}' created in database. Role: '${user.role}', Status: '${user.status}'.`);
+        // Generate verification token
+        const verificationToken = `token_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+        await storage.createVerificationToken({
+          token: verificationToken,
+          userId: user.id,
+          type: "email_verification",
+          expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000) // 24 hours
+        });
+        console.log(`[INFO] Verification email simulation triggered for ${userData.email}`);
+        res.json({ 
+          success: true, 
+          user,
+          message: "Registration successful. Please check your email to verify your account.",
+          verificationToken // For testing purposes
+        });
+      } catch (dbError) {
+        const message = dbError instanceof Error ? dbError.message : String(dbError);
+        console.error(`[ERROR] Database error during user creation:`, dbError);
+        res.status(500).json({ error: "Database error during user creation", details: message });
+      }
     } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
       console.error("Registration error:", error);
-      res.status(500).json({ error: "Registration failed" });
+      res.status(500).json({ error: "Registration failed", details: message });
     }
   });
 
@@ -138,6 +139,52 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Resend verification error:", error);
       res.status(500).json({ error: "Failed to resend verification email" });
+    }
+  });
+
+  // Forgot password route
+  app.post("/api/auth/forgot-password", async (req, res) => {
+    try {
+      const { email } = req.body;
+      if (!email) {
+        return res.status(400).json({ error: "Email required" });
+      }
+      // Simulate token generation and email sending
+      const resetToken = `reset_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      await storage.createVerificationToken({
+        token: resetToken,
+        userId: email,
+        type: "password_reset",
+        expiresAt: new Date(Date.now() + 60 * 60 * 1000) // 1 hour
+      });
+      console.log(`[INFO] Password reset email simulation triggered for ${email}.`);
+      res.json({ success: true, message: "Password reset email sent", resetToken });
+    } catch (error) {
+      console.error("Forgot password error:", error);
+      res.status(500).json({ error: "Failed to send password reset email" });
+    }
+  });
+
+  // Reset password route
+  app.post("/api/auth/reset-password", async (req, res) => {
+    try {
+      const { token, newPassword } = req.body;
+      if (!token || !newPassword) {
+        return res.status(400).json({ error: "Token and new password required" });
+      }
+      // Simulate token lookup and password update
+      const verificationRecord = await storage.getVerificationToken(token);
+      if (!verificationRecord || verificationRecord.type !== "password_reset") {
+        return res.status(400).json({ error: "Invalid or expired token" });
+      }
+      // Simulate password update
+      await storage.updateUserPassword(verificationRecord.userId, newPassword);
+      await storage.markTokenAsUsed(token);
+      console.log(`[SUCCESS] Password updated for user '${verificationRecord.userId}'.`);
+      res.json({ success: true, message: "Password updated successfully" });
+    } catch (error) {
+      console.error("Reset password error:", error);
+      res.status(500).json({ error: "Failed to reset password" });
     }
   });
 

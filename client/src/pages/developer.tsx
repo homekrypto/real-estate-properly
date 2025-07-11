@@ -1,5 +1,4 @@
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -26,7 +25,7 @@ import {
 export default function Developer() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <Header />
+      <Layout>
       
       <div className="pt-20">
         {/* Hero Section */}
@@ -363,7 +362,8 @@ export default function Developer() {
         </section>
       </div>
 
-      <Footer />
+      {/* Footer is included in Layout */}
+      </Layout>
     </div>
   );
 }

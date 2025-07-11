@@ -724,6 +724,7 @@ export default function AgentDashboard() {
                   </div>
                   <div className="text-right">
                     <div className="text-2xl font-bold text-forest-600 dark:text-forest-400">$160/mo</div>
+                    <div className="text-2xl font-bold text-forest-600 dark:text-forest-400">$110/mo</div>
                     <Badge className="bg-green-600 text-white">{t('agent.activePlan')}</Badge>
                   </div>
                 </div>

@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'wouter';
 import { Crown, Menu, X } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
@@ -15,12 +16,15 @@ export function Layout({ children }: LayoutProps) {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // ...existing code...
+  // Removed any navigation items for 'Checkout Global subscription', 'Activate with Facebook', 'Activate with Google', 'Activate with LinkedIn' (none present)
   const navigation = [
     { name: t('nav.buy'), href: '/buy' },
     { name: t('nav.rent'), href: '/rent' },
     { name: t('nav.agents'), href: '/agents' },
     { name: t('nav.pricing'), href: '/pricing' },
     { name: t('nav.insights'), href: '/blog' },
+    { name: t('nav.developers', 'Developers'), href: '/developer' },
   ];
 
   return (
@@ -130,7 +134,7 @@ export function Layout({ children }: LayoutProps) {
         {children}
       </main>
 
-      {/* Footer */}
+      {/* Footer - Unified with homepage */}
       <footer className="bg-gray-900 dark:bg-black text-white py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-4 gap-8 mb-12">
@@ -169,6 +173,7 @@ export function Layout({ children }: LayoutProps) {
                   { name: t('footer.findAgent'), href: '/agents' },
                   { name: t('footer.marketInsights'), href: '/blog' },
                   { name: t('footer.investmentGuide'), href: '/blog/investment' },
+                  { name: t('footer.developerSolutions'), href: '/developer' },
                 ].map((link) => (
                   <li key={link.name}>
                     <Link
@@ -182,13 +187,12 @@ export function Layout({ children }: LayoutProps) {
               </ul>
             </div>
 
-            {/* Professional Services */}
+            {/* For Professionals */}
             <div>
               <h3 className="text-lg font-semibold mb-6">{t('footer.forProfessionals')}</h3>
               <ul className="space-y-3">
                 {[
                   { name: t('footer.agentPlans'), href: '/pricing' },
-                  { name: t('footer.developerSolutions'), href: '/developer' },
                   { name: t('footer.apiDocs'), href: '/api-docs' },
                   { name: t('footer.marketingTools'), href: '/tools' },
                   { name: t('footer.supportCenter'), href: '/support' },
@@ -206,21 +210,68 @@ export function Layout({ children }: LayoutProps) {
             </div>
           </div>
 
+          {/* Contact Info */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <div className="flex items-center space-x-3">
+              <Mail className="h-5 w-5 text-forest-400" />
+              <div>
+                <div className="text-sm text-gray-400">Email</div>
+                <div className="text-white">contact@properly.com</div>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <Phone className="h-5 w-5 text-forest-400" />
+              <div>
+                <div className="text-sm text-gray-400">Phone</div>
+                <div className="text-white">+1 (555) 123-4567</div>
+              </div>
+            </div>
+            <div className="flex items-center space-x-3">
+              <MapPin className="h-5 w-5 text-forest-400" />
+              <div>
+                <div className="text-sm text-gray-400">Headquarters</div>
+                <div className="text-white">New York, NY</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Global Presence */}
+          <div className="border-t border-gray-800 pt-8 mb-8">
+            <h3 className="text-lg font-semibold mb-4 text-white">Global Presence</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-sm text-gray-400">
+              <div>🇺🇸 United States</div>
+              <div>🇬🇧 United Kingdom</div>
+              <div>🇪🇸 Spain</div>
+              <div>🇮🇹 Italy</div>
+              <div>🇫🇷 France</div>
+              <div>🇩🇪 Germany</div>
+              <div>🇵🇹 Portugal</div>
+              <div>🇬🇷 Greece</div>
+              <div>🇩🇴 Dominican Republic</div>
+              <div>🇨🇳 China</div>
+              <div>🇦🇪 UAE</div>
+              <div>🇨🇭 Switzerland</div>
+            </div>
+          </div>
+
           {/* Bottom Footer */}
           <div className="border-t border-gray-800 pt-8">
             <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
               <div className="text-gray-400 text-sm">
-                {t('footer.copyright')}
+                © 2025 Properly. All rights reserved.
               </div>
               <div className="flex space-x-6 text-sm">
                 <Link href="/privacy" className="text-gray-400 hover:text-forest-400 transition-colors">
-                  {t('footer.privacy')}
+                  Privacy Policy
                 </Link>
                 <Link href="/terms" className="text-gray-400 hover:text-forest-400 transition-colors">
-                  {t('footer.terms')}
+                  Terms of Service
                 </Link>
                 <Link href="/cookies" className="text-gray-400 hover:text-forest-400 transition-colors">
-                  {t('footer.cookies')}
+                  Cookie Policy
+                </Link>
+                <Link href="/legal" className="text-gray-400 hover:text-forest-400 transition-colors">
+                  Legal
                 </Link>
               </div>
             </div>

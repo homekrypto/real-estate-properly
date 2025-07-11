@@ -29,6 +29,10 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
+    port: 2334,
+    proxy: {
+      '/api': 'http://localhost:2333'
+    },
     fs: {
       strict: true,
       deny: ["**/.*"],

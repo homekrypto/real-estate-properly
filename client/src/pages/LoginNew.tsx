@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
+import { Layout } from '@/components/Layout';
 
 export default function LoginNew() {
   const [, setLocation] = useLocation();
@@ -71,53 +72,19 @@ export default function LoginNew() {
   };
 
   return (
-    <div style={{ 
-      minHeight: "100vh",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      backgroundColor: "#f5f5f5",
-      padding: "20px"
-    }}>
-      <div style={{ 
-        width: "100%",
-        maxWidth: "400px",
-        backgroundColor: "white",
-        borderRadius: "8px",
-        boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-        padding: "40px"
-      }}>
-        <h1 style={{ 
-          fontSize: "28px",
-          fontWeight: "bold",
-          marginBottom: "10px",
-          color: "#333",
-          textAlign: "center"
-        }}>
-          Welcome Back
-        </h1>
-        <p style={{ 
-          color: "#666",
-          marginBottom: "30px",
-          textAlign: "center"
-        }}>
-          Sign in to your account
-        </p>
-        
+    <Layout>
+      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 py-8">
+        <div className="w-full max-w-md bg-white dark:bg-gray-800 rounded-lg shadow-2xl p-8">
+        <h1 className="text-3xl font-bold mb-2 text-center text-gray-900 dark:text-white">Welcome Back</h1>
+        <p className="text-gray-600 dark:text-gray-300 mb-6 text-center">Sign in to your account</p>
         <form onSubmit={handleSubmit}>
           {/* Email Field */}
-          <div style={{ marginBottom: "20px" }}>
-            <label style={{ 
-              display: "block",
-              marginBottom: "8px",
-              color: "#333",
-              fontWeight: "500"
-            }}>
-              Email
-            </label>
+          <div className="mb-4">
+            <label className="block mb-2 text-gray-700 dark:text-gray-300 font-medium">Email</label>
             <input
               type="email"
               name="email"
+              className="w-full p-2 border rounded bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white"
               value={formData.email}
               onChange={handleInputChange}
               placeholder="email@example.com"
@@ -242,7 +209,8 @@ export default function LoginNew() {
             </a>
           </p>
         </div>
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 }

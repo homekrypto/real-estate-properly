@@ -2,8 +2,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useLocation } from "wouter";
 import { useTranslation } from "react-i18next";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -62,7 +61,7 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <Header />
+      <Layout>
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-forest-50 via-white to-gold-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen flex items-center">
         <div className="container mx-auto px-4 lg:px-8">
@@ -433,7 +432,7 @@ export default function Landing() {
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('pricing.global20')}</h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">{t('pricing.global20Description')}</p>
                   <div className="text-4xl font-bold text-forest-600 dark:text-forest-400 mb-2">
-                    $120<span className="text-lg font-normal">/mo</span>
+                    $50<span className="text-lg font-normal">/mo</span>
                   </div>
                   <p className="text-sm text-gray-500 dark:text-gray-400">{t('pricing.billedAnnuallySave', { amount: '$180' })}</p>
                 </div>
@@ -474,7 +473,7 @@ export default function Landing() {
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('pricing.global50')}</h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">{t('pricing.global50Description')}</p>
                   <div className="text-4xl font-bold text-forest-600 dark:text-forest-400 mb-2">
-                    $160<span className="text-lg font-normal">/mo</span>
+                    $80<span className="text-lg font-normal">/mo</span>
                   </div>
                   <p className="text-sm text-gray-500 dark:text-gray-400">{t('pricing.billedAnnuallySave', { amount: '$240' })}</p>
                 </div>
@@ -515,7 +514,7 @@ export default function Landing() {
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('pricing.global100')}</h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">{t('pricing.global100Description')}</p>
                   <div className="text-4xl font-bold text-forest-600 dark:text-forest-400 mb-2">
-                    $240<span className="text-lg font-normal">/mo</span>
+                    $110<span className="text-lg font-normal">/mo</span>
                   </div>
                   <p className="text-sm text-gray-500 dark:text-gray-400">{t('pricing.billedAnnuallySave', { amount: '$360' })}</p>
                 </div>
@@ -807,7 +806,7 @@ export default function Landing() {
                   onClick={() => setLocation("/signup")}
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white"
                 >
-                  {t('auth.createAccount')}
+                  Sign Up
                 </Button>
               </CardContent>
             </Card>
@@ -846,7 +845,7 @@ export default function Landing() {
                     onClick={() => setLocation("/signup")}
                     className="w-full bg-green-600 hover:bg-green-700 text-white"
                   >
-                    {t('auth.createAgentAccount')}
+                    Sign Up as Agent
                   </Button>
                   <Button 
                     onClick={() => setLocation("/agent-pricing")}
@@ -889,14 +888,15 @@ export default function Landing() {
                   onClick={() => setLocation("/signup")}
                   className="w-full bg-orange-600 hover:bg-orange-700 text-white"
                 >
-                  {t('auth.createDeveloperAccount')}
+                  Sign Up as Developer
                 </Button>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
-      <Footer />
+      {/* Footer is included in Layout */}
+      </Layout>
     </div>
   );
 }
